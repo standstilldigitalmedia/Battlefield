@@ -136,7 +136,7 @@ public class LoginPanel : MonoBehaviour
 
         if (cmd == "i")
         {
-            Player.Instance.inventoryObject = dataObject;
+            //Player.Instance.inventoryObject = dataObject;
             connectingPanel.GetComponent<LoadingPanel>().UpdateProgress(0.95f);
             DestroyConnectingPanel();
             connectingPanel = Instantiate(Resources.Load("LoadingPanel"), GameObject.Find("Canvas").transform) as GameObject;
