@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.SignUpAssistantComponent"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.login.LoginAssistantComponent"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.extensions.ExtensionLogLevel"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.persistence.room.DBRoomStorageConfig"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.PasswordMode"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.ISignUpAssistantPlugin"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.SignUpConfiguration"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.SignUpValidationException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.signup.SignUpErrorCodes"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.login.ILoginAssistantPlugin"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.components.login.LoginData"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.core.SFSEventType"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.persistence.room.RoomStorageMode"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.extensions.BaseServerEventHandler"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.core.ISFSEvent"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.exceptions.SFSException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.core.SFSEventParam"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.User"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.db.IDBManager"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.data.ISFSObject"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.data.ISFSArray"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.data.SFSArray"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.data.SFSObject"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.variables.SFSUserVariable"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.exceptions.SFSVariableException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.variables.UserVariable"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.api.CreateRoomSettings"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.SFSRoomRemoveMode"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.variables.RoomVariable"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.variables.SFSRoomVariable"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.entities.Room"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.exceptions.SFSCreateRoomException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.exceptions.SFSJoinRoomException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.persistence.room.SFSStorageException"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.extensions.SFSExtension"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.util.TaskScheduler"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ScheduledFuture"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.smartfoxserver.v2.SmartFoxServer"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+</qualifiedTypeNameHistroy>
