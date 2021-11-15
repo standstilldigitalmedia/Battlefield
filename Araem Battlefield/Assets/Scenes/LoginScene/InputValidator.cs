@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InputValidator : MonoBehaviour
 {
-    LoginPanel loginPanel;
-    SignUpPanel signUpPanel;
+    [SerializeField] LoginPanel loginPanel;
+    [SerializeField] SignUpPanel signUpPanel;
 
-    public static bool ValidateTermsToggle(Toggle termsToggle, Text errorText)
+    public static bool ValidateTermsToggle(Toggle termsToggle, TMP_Text errorText)
     {
         if(termsToggle.isOn)
         {
@@ -19,7 +20,7 @@ public class InputValidator : MonoBehaviour
         return false;
     }
 
-    public static bool ValidateEmail(string email, Text errorText)
+    public static bool ValidateEmail(string email, TMP_Text errorText)
     {
         if (string.IsNullOrWhiteSpace(email))
         {
@@ -44,7 +45,7 @@ public class InputValidator : MonoBehaviour
         return true;
     }
 
-    public static bool ValidatePassword(string password, Text errorText)
+    public static bool ValidatePassword(string password, TMP_Text errorText)
     {
         if (string.IsNullOrWhiteSpace(password))
         {
@@ -87,7 +88,7 @@ public class InputValidator : MonoBehaviour
         return true;
     }
 
-    public static bool ValidateRePassword(string password, string rePassword, Text errorText)
+    public static bool ValidateRePassword(string password, string rePassword, TMP_Text errorText)
     {
         if (password != rePassword)
         {
@@ -97,7 +98,7 @@ public class InputValidator : MonoBehaviour
         return true;
     }
 
-    public static bool ValidateUsername(string username, Text errorText)
+    public static bool ValidateUsername(string username, TMP_Text errorText)
     {
         if (string.IsNullOrWhiteSpace(username))
         {
@@ -143,9 +144,6 @@ public class InputValidator : MonoBehaviour
 
     private void Start()
     {
-        loginPanel = GameObject.Find("LoginPanel").GetComponent<LoginPanel>();
-        signUpPanel = GameObject.Find("SignUpPanel").GetComponent<SignUpPanel>();
-
         loginPanel.InitPanel();
         signUpPanel.gameObject.SetActive(false);
 

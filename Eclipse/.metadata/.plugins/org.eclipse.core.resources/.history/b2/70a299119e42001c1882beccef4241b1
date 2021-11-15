@@ -125,7 +125,7 @@ public class ZoneExtension extends SFSExtension
 	void InitRoomPersistence()
 	{
 		DBRoomStorageConfig dbsc = new DBRoomStorageConfig();
-		dbsc.tableName = "bf_rooms";
+		dbsc.tableName = "BF_rooms";
 		
 		dbsc.storeInactiveRooms = true;
 		dbsc.storeRoomVariables = true;
@@ -152,7 +152,7 @@ public class ZoneExtension extends SFSExtension
 	
 	void InitArmyInventoryTable()
 	{
-		if(!TableExists("sfs2x","bf_ArmyInventory"))
+		if(!TableExists("sfs2x","BF_ArmyInventory"))
 		{
 			String sql = "CREATE TABLE BG_ArmyInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, attack TINYINT UNSIGNED, defense TINYINT UNSIGNED, movement TINYINT UNSIGNED, bbgroup TINYINT UNSIGNED, upgradeLevel TINYINT UNSIGNED, upgradeString VARCHAR(50), abilities VARCHAR(50), INDEX(playerID));";
 	        try
@@ -170,7 +170,7 @@ public class ZoneExtension extends SFSExtension
 	
 	void InitCraftInventoryTable()
 	{
-		if(!TableExists("sfs2x","bf_CraftInventory"))
+		if(!TableExists("sfs2x","BF_CraftInventory"))
 		{
 			String sql = "CREATE TABLE BG_CraftInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, type VARCHAR(2) NOT NULL, quantity SMALLINT UNSIGNED NOT NULL, INDEX(playerID));";
 	        try
@@ -188,9 +188,9 @@ public class ZoneExtension extends SFSExtension
 	
 	void InitCipherTable()
 	{
-		if(!TableExists("sfs2x","bf_Cipher"))
+		if(!TableExists("sfs2x","BG_Cipher"))
 		{
-			String sql = "CREATE TABLE BF_Cipher (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, cipher VARCHAR(26) NOT NULL, seed VARCHAR(100), BOOL solved, INDEX(playerID));";
+			String sql = "CREATE TABLE BF_Cipher (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, cipher VARCHAR(26) NOT NULL, seed VARCHAR(100), INDEX(playerID));";
 	        try
 	        {
 	        	sfs2xDBManager.executeInsert(sql, new Object[] {});

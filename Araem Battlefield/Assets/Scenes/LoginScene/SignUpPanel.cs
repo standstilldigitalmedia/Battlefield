@@ -3,6 +3,7 @@ using Sfs2X.Core;
 using Sfs2X.Entities.Data;
 using Sfs2X.Requests;
 using Sfs2X.Util;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,15 +12,15 @@ public class SignUpPanel : MonoBehaviour
     public delegate void SwitchToLoginAction();
     public static event SwitchToLoginAction SwitchToLoginClicked;
 
-    InputField emailInput;
-    InputField signUpUsernameInput;
-    InputField signUpPasswordInput;
-    InputField rePasswordInput;    
-    Toggle termsToggle;
-    Text signUpErrorText;
-    Button signUpButton;
-    Button backToLoginButton;
-    Button signUpCloseButton;
+    [SerializeField] TMP_InputField emailInput;
+    [SerializeField] TMP_InputField signUpUsernameInput;
+    [SerializeField] TMP_InputField signUpPasswordInput;
+    [SerializeField] TMP_InputField rePasswordInput;
+    [SerializeField] Toggle termsToggle;
+    [SerializeField] TMP_Text signUpErrorText;
+    [SerializeField] Button signUpButton;
+    [SerializeField] Button backToLoginButton;
+    [SerializeField] Button signUpCloseButton;
     GameObject connectingPanel;
 
     void ActivateLoginPanel()
@@ -213,20 +214,6 @@ public class SignUpPanel : MonoBehaviour
         SFSConnection.Instance.sfs.Connect(cfg);
     }
 
-    void FindInputs()
-    {
-        emailInput = GameObject.Find("EmailInput").GetComponent<InputField>();
-        signUpUsernameInput = GameObject.Find("SignUpUsernameInput").GetComponent<InputField>();
-        signUpPasswordInput = GameObject.Find("SignUpPasswordInput").GetComponent<InputField>();
-        rePasswordInput = GameObject.Find("RePasswordInput").GetComponent<InputField>();
-        
-        termsToggle = GameObject.Find("TermsToggle").GetComponent<Toggle>();
-        signUpErrorText = GameObject.Find("SignUpErrorText").GetComponent<Text>();
-        signUpButton = GameObject.Find("SignupButton").GetComponent<Button>();
-        backToLoginButton = GameObject.Find("BackToLoginButton").GetComponent<Button>();
-        signUpCloseButton = GameObject.Find("SignUpCloseButton").GetComponent<Button>();
-    }
-
     void ClearInputs()
     {
         emailInput.text = "";
@@ -236,21 +223,6 @@ public class SignUpPanel : MonoBehaviour
 
         termsToggle.isOn = false;
         signUpButton.interactable = false;
-    }
-
-    void LoseInputs()
-    {
-        emailInput = null;
-        signUpUsernameInput = null;
-        signUpPasswordInput = null;
-        rePasswordInput = null;
-
-        termsToggle = null;
-        signUpErrorText = null;
-        signUpButton = null;
-        backToLoginButton = null;
-
-        connectingPanel = null;
     }
 
     void OnQuitButtonClick()
@@ -286,7 +258,6 @@ public class SignUpPanel : MonoBehaviour
 
     public void InitPanel()
     {
-        FindInputs();
         ClearInputs();
         SetInputListeners();
         signUpErrorText.text = "";
@@ -297,7 +268,6 @@ public class SignUpPanel : MonoBehaviour
         signUpErrorText.text = "";
         UnsetInputListeners();
         ClearInputs();
-        LoseInputs();
         UnsetSFSListeners();
         gameObject.SetActive(false);
     }

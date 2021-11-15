@@ -3,6 +3,7 @@ using Sfs2X.Core;
 using Sfs2X.Entities.Data;
 using Sfs2X.Requests;
 using Sfs2X.Util;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,15 @@ public class LoginPanel : MonoBehaviour
 {
     public delegate void SwitchToSignUpAction();
     public static event SwitchToSignUpAction SwitchToSignupClicked;
-    
-    InputField loginUsernameInput;
-    InputField loginPasswordInput;
-    Toggle rememberMeToggle;
-    Button forgotPasswordButton;
-    Text loginErrorText;
-    Button loginButton;
-    Button createAccountButton;
-    Button loginCloseButton;
+
+    [SerializeField] TMP_InputField loginUsernameInput;
+    [SerializeField] TMP_InputField loginPasswordInput;
+    [SerializeField] Toggle rememberMeToggle;
+    [SerializeField] Button forgotPasswordButton;
+    [SerializeField] TMP_Text loginErrorText;
+    [SerializeField] Button loginButton;
+    [SerializeField] Button createAccountButton;
+    [SerializeField] Button loginCloseButton;
     GameObject connectingPanel;
 
     void ValidateForm(bool validation)
@@ -144,32 +145,6 @@ public class LoginPanel : MonoBehaviour
         }
     }
 
-    void FindInputs()
-    {
-        loginUsernameInput = GameObject.Find("LoginUsernameInput").GetComponent<InputField>();
-        loginPasswordInput = GameObject.Find("LoginPasswordInput").GetComponent<InputField>();
-        rememberMeToggle = GameObject.Find("RememberMeToggle").GetComponent<Toggle>();
-        forgotPasswordButton = GameObject.Find("ForgotPasswordButton").GetComponent<Button>();
-        loginErrorText = GameObject.Find("LoginErrorText").GetComponent<Text>();
-        loginButton = GameObject.Find("LoginButton").GetComponent<Button>();
-        createAccountButton = GameObject.Find("CreateAccountButton").GetComponent<Button>();
-        loginCloseButton = GameObject.Find("LoginCloseButton").GetComponent<Button>();
-    }
-
-    void LoseInputs()
-    {
-        loginUsernameInput = null;
-        loginPasswordInput = null;
-        rememberMeToggle = null;
-        forgotPasswordButton = null;
-        loginErrorText = null;
-        loginButton = null;
-        createAccountButton = null;
-        loginCloseButton = null;
-        
-        connectingPanel = null;
-    }
-
     void ClearInputs()
     {
         loginUsernameInput.text = "";
@@ -234,7 +209,6 @@ public class LoginPanel : MonoBehaviour
 
     public void InitPanel()
     {
-        FindInputs();
         ClearInputs();
         SetInputListeners();
         loginErrorText.text = "";
@@ -250,7 +224,6 @@ public class LoginPanel : MonoBehaviour
         loginErrorText.text = "";
         UnsetInputListeners();
         ClearInputs();
-        LoseInputs();
         UnsetSFSListeners();
         gameObject.SetActive(false);
     }
