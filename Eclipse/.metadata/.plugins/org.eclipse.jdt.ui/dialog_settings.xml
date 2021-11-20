@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-1.8"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\bnest\SmartFoxServer_2X\SFS2X\lib"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\bnest\Desktop\Repo\SFS\SFS2X\lib"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -43,6 +43,7 @@
 		<item key="JarManifestWizardPage.MANIFEST_LOCATION" value=""/>
 		<item key="JarManifestWizardPage.SEAL_JAR" value="false"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\bnest\Desktop\Repo\SFS\SFS2X\extensions\BattlefieldExtension\BattlefieldExtension.jar"/>
 			<item value="C:\Users\bnest\SmartFoxServer_2X\SFS2X\extensions\Battlefield\BattlefieldExtension.jar"/>
 			<item value="C:\SFS2X\SFS2X\extensions\BattlegroundExtension\ZoneExtension.jar"/>
 			<item value="C:\SFS2X\SFS2X\extensions\CampaignRoomExtension\CampaignRoomExtension.jar"/>

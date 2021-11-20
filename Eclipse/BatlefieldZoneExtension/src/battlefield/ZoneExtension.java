@@ -154,7 +154,7 @@ public class ZoneExtension extends SFSExtension
 	{
 		if(!TableExists("sfs2x","bf_ArmyInventory"))
 		{
-			String sql = "CREATE TABLE BG_ArmyInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, attack TINYINT UNSIGNED, defense TINYINT UNSIGNED, movement TINYINT UNSIGNED, bbgroup TINYINT UNSIGNED, upgradeLevel TINYINT UNSIGNED, upgradeString VARCHAR(50), abilities VARCHAR(50), INDEX(playerID));";
+			String sql = "CREATE TABLE bf_ArmyInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, attack TINYINT UNSIGNED, defense TINYINT UNSIGNED, movement TINYINT UNSIGNED, bbgroup TINYINT UNSIGNED, upgradeLevel TINYINT UNSIGNED, upgradeString VARCHAR(50), abilities VARCHAR(50), INDEX(playerID));";
 	        try
 	        {
 	        	sfs2xDBManager.executeInsert(sql, new Object[] {});
@@ -172,7 +172,7 @@ public class ZoneExtension extends SFSExtension
 	{
 		if(!TableExists("sfs2x","bf_CraftInventory"))
 		{
-			String sql = "CREATE TABLE BG_CraftInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, type VARCHAR(2) NOT NULL, quantity SMALLINT UNSIGNED NOT NULL, INDEX(playerID));";
+			String sql = "CREATE TABLE bf_CraftInventory (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, type VARCHAR(2) NOT NULL, quantity SMALLINT UNSIGNED NOT NULL, INDEX(playerID));";
 	        try
 	        {
 	        	sfs2xDBManager.executeInsert(sql, new Object[] {});
@@ -190,7 +190,7 @@ public class ZoneExtension extends SFSExtension
 	{
 		if(!TableExists("sfs2x","bf_Cipher"))
 		{
-			String sql = "CREATE TABLE BF_Cipher (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, cipher VARCHAR(26) NOT NULL, seed VARCHAR(100), BOOL solved, INDEX(playerID));";
+			String sql = "CREATE TABLE bf_Cipher (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, playerID INT UNSIGNED NOT NULL, race TINYINT UNSIGNED, cipher VARCHAR(26) NOT NULL, seed VARCHAR(100), solved TINYINT UNSIGNED, INDEX(playerID));";
 	        try
 	        {
 	        	sfs2xDBManager.executeInsert(sql, new Object[] {});

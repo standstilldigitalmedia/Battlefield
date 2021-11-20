@@ -59,7 +59,7 @@ public class JoinZoneEvent extends BaseServerEventHandler
     			cfg.setMaxUsers(1);
     			cfg.setMaxVariablesAllowed(10);
     			cfg.setGame(false);
-    			cfg.setExtension(new CreateRoomSettings.RoomExtensionSettings("Battlefield", "battlefield.CampaignRoomExtension"));
+    			cfg.setExtension(new CreateRoomSettings.RoomExtensionSettings("BattlefieldExtension", "battlefield.CampaignRoomExtension"));
     			cfg.setDynamic(true);
     			cfg.setAutoRemoveMode(SFSRoomRemoveMode.WHEN_EMPTY);
     			

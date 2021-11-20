@@ -86,7 +86,7 @@ public class Cipher
 	
 	static String InsertNewCipher(User user, IDBManager sfs2xDBManager, int race, String cipher, String seed)
 	{
-		String sql = "INSERT INTO bg_cipher (playerID, race, cipher, seed) VALUES (?,?,?,?);";
+		String sql = "INSERT INTO bf_cipher (playerID, race, cipher, seed) VALUES (?,?,?,?);";
 		int userID = user.getVariable("dbid").getIntValue();
 		try
 		{
@@ -159,7 +159,7 @@ public class Cipher
 	{
 		ISFSArray cipherArray = new SFSArray();
 		int userID = user.getVariable("dbid").getIntValue();
-		String sql = "SELECT * FROM bg_cipher WHERE playerID=" + userID;
+		String sql = "SELECT * FROM bf_cipher WHERE playerID=" + userID;
 		
 		try
         {
