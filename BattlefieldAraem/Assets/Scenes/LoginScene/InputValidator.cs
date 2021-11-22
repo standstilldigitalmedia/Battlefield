@@ -13,6 +13,7 @@ public class InputValidator : MonoBehaviour
         {
             return true;
         }
+        errorText.gameObject.SetActive(true);
         errorText.text = "You must agree to the terms";
         return false;
     }
@@ -21,6 +22,7 @@ public class InputValidator : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(email))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Email field should not be empty";
             return false;
         }
@@ -30,12 +32,14 @@ public class InputValidator : MonoBehaviour
         Regex hasMiniMaxChars = new Regex(@".{6,50}");
         if (!result.Success)
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Please enter a valid email address";
             return false;
         }
 
         if (!hasMiniMaxChars.IsMatch(email))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Email address should have between 6 and 50 characters";
             return false;
         }
@@ -46,6 +50,7 @@ public class InputValidator : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Password field should not be empty";
             return false;
         }
@@ -58,27 +63,32 @@ public class InputValidator : MonoBehaviour
 
         if (!hasLowerChar.IsMatch(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Password should contain at least one lower case letter";
             return false;
         }
         if (!hasUpperChar.IsMatch(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Password should contain at least one upper case letter";
             return false;
         }
         if (!hasNumber.IsMatch(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Password should contain at least one numeric value";
             return false;
         }
 
         if (!hasSymbols.IsMatch(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Password should contain at least one special character";
             return false;
         }
         if (!hasMiniMaxChars.IsMatch(password))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Passwords should have between 6 and 30 characters";
             return false;
         }
@@ -89,6 +99,7 @@ public class InputValidator : MonoBehaviour
     {
         if (password != rePassword)
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Passwords must match";
             return false;
         }
@@ -99,6 +110,7 @@ public class InputValidator : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(username))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Username field should not be empty";
             return false;
         }
@@ -108,12 +120,14 @@ public class InputValidator : MonoBehaviour
         Regex hasMiniMaxChars = new Regex(@".{6,30}");
         if (!result.Success)
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Username can not contain special characters";
             return false;
         }
 
         if (!hasMiniMaxChars.IsMatch(username))
         {
+            errorText.gameObject.SetActive(true);
             errorText.text = "Username should have between 6 and 30 characters";
             return false;
         }

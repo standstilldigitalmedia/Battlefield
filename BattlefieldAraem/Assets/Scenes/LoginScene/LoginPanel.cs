@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoginPanel : MonoBehaviour
+public class LoginPanel : BasePanel
 {
     public delegate void SwitchToSignUpAction();
     public static event SwitchToSignUpAction SwitchToSignupClicked;
@@ -21,7 +21,6 @@ public class LoginPanel : MonoBehaviour
     [SerializeField] Button createAccountButton;
     [SerializeField] Button loginCloseButton;
     GameObject connectingPanel;
-    Canvas myCanvas;
 
     void ClearInputs()
     {
@@ -51,7 +50,7 @@ public class LoginPanel : MonoBehaviour
             {
                 if (InputValidator.ValidatePassword(loginPasswordInput.text, loginErrorText))
                 {
-                    loginErrorText.text = "";
+                    loginErrorText.gameObject.SetActive(false);
                     activeButton = true;                            
                 }
             }
@@ -90,6 +89,7 @@ public class LoginPanel : MonoBehaviour
         }
         else
         {
+            loginErrorText.gameObject.SetActive(true);
             loginErrorText.text = "There was a connection problem. Please check your internet connection and try again.";
             Disconnect();
             DestroyConnectingPanel();
@@ -128,6 +128,7 @@ public class LoginPanel : MonoBehaviour
     void OnRoomJoinError(BaseEvent evt)
     {
         DestroyConnectingPanel();
+        loginErrorText.gameObject.SetActive(true);
         loginErrorText.text = "Room join failed: " + (string)evt.Params["errorMessage"];
     }
 
@@ -176,27 +177,6 @@ public class LoginPanel : MonoBehaviour
             SFSConnection.Instance.sfs.AddEventListener(SFSEvent.EXTENSION_RESPONSE, OnExtensionResponse);
         }
     }
-
-    void SetInputListeners()
-    {
-        loginUsernameInput.onValueChanged.AddListener(ValidateUsername);
-        loginPasswordInput.onValueChanged.AddListener(ValidatePassword);
-        forgotPasswordButton.onClick.AddListener(OnForgotPasswordButtonClick);
-        loginButton.onClick.AddListener(OnLoginButtonClick);
-        createAccountButton.onClick.AddListener(OnSwitchToSigunpButtonClicked);
-        
-        loginCloseButton.onClick.AddListener(OnQuitButtonClick);
-    }
-
-    void UnsetInputListeners()
-    {
-        loginUsernameInput.onValueChanged.RemoveListener(ValidateUsername);
-        loginPasswordInput.onValueChanged.RemoveListener(ValidatePassword);
-        forgotPasswordButton.onClick.RemoveListener(OnForgotPasswordButtonClick);
-        loginButton.onClick.RemoveListener(OnLoginButtonClick);
-        createAccountButton.onClick.RemoveListener(OnSwitchToSigunpButtonClicked);
-        loginCloseButton.onClick.RemoveListener(OnQuitButtonClick);
-    }
     #endregion
 
     void OnForgotPasswordButtonClick()
@@ -207,7 +187,7 @@ public class LoginPanel : MonoBehaviour
     void OnSwitchToSigunpButtonClicked()
     {
         SwitchToSignupClicked?.Invoke();
-        ClosePanel();
+        ClearPanel();
     }
 
     void OnSwitchToLoginClicked()
@@ -239,32 +219,49 @@ public class LoginPanel : MonoBehaviour
         GameManager.Instance.OnQuitButtonClick();
     }
 
-    void InitPanel()
+    public override void SetListeners()
+    {
+        loginUsernameInput.onValueChanged.AddListener(ValidateUsername);
+        loginPasswordInput.onValueChanged.AddListener(ValidatePassword);
+        forgotPasswordButton.onClick.AddListener(OnForgotPasswordButtonClick);
+        loginButton.onClick.AddListener(OnLoginButtonClick);
+        createAccountButton.onClick.AddListener(OnSwitchToSigunpButtonClicked);
+
+        loginCloseButton.onClick.AddListener(OnQuitButtonClick);
+    }
+
+    public override void UnSetListeners()
+    {
+        loginUsernameInput.onValueChanged.RemoveListener(ValidateUsername);
+        loginPasswordInput.onValueChanged.RemoveListener(ValidatePassword);
+        forgotPasswordButton.onClick.RemoveListener(OnForgotPasswordButtonClick);
+        loginButton.onClick.RemoveListener(OnLoginButtonClick);
+        createAccountButton.onClick.RemoveListener(OnSwitchToSigunpButtonClicked);
+        loginCloseButton.onClick.RemoveListener(OnQuitButtonClick);
+    }
+
+    public override void OverideClearPanel()
+    {
+        loginErrorText.text = "";
+        loginErrorText.gameObject.SetActive(false);
+        ClearInputs();
+        UnsetSFSListeners();
+    }
+
+    public override void OverrideInitPanel()
     {
         ClearInputs();
-        SetInputListeners();
 
-        loginErrorText.text = "";
+        loginErrorText.gameObject.SetActive(false);
         if (PlayerPrefs.HasKey("username"))
         {
             loginUsernameInput.text = PlayerPrefs.GetString("username");
             loginPasswordInput.text = PlayerPrefs.GetString("token");
         }
-        myCanvas.enabled = true;
     }
 
-    void ClosePanel()
+    public override void OverrideStart()
     {
-        myCanvas.enabled = false;
-        loginErrorText.text = "";
-        UnsetInputListeners();
-        ClearInputs();
-        UnsetSFSListeners();
-    }
-
-    private void Start()
-    {
-        myCanvas = GetComponent<Canvas>();
         InitPanel();
         SignUpPanel.SwitchToLoginClicked += OnSwitchToLoginClicked;
     }

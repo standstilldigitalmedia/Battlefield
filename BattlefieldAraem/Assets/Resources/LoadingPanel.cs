@@ -76,7 +76,7 @@ public class LoadingPanel : MonoBehaviour
         SetQuoteStrings();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         transform.SetAsLastSibling();
     }

@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SignUpPanel : MonoBehaviour
+public class SignUpPanel : BasePanel
 {
     public delegate void SwitchToLoginAction();
     public static event SwitchToLoginAction SwitchToLoginClicked;
@@ -207,39 +207,7 @@ public class SignUpPanel : MonoBehaviour
             SFSConnection.Instance.sfs.RemoveEventListener(SFSEvent.EXTENSION_RESPONSE, OnExtensionResponse);
         }
     }
-
-    void SetInputListeners()
-    {
-        //LoginPanel.SwitchToSignupClicked += SwitchToSignup;
-
-        emailInput.onValueChanged.AddListener(ValidateEmail);
-        signUpUsernameInput.onValueChanged.AddListener(ValidateUsername);
-        signUpPasswordInput.onValueChanged.AddListener(ValidatePassword);
-        rePasswordInput.onValueChanged.AddListener(ValidateRePassword);
-
-        termsToggle.onValueChanged.AddListener(ValidateTermsToggle);
-        signUpButton.onClick.AddListener(OnSignUpButtonClick);
-        backToLoginButton.onClick.AddListener(OnSwitchToLoginClicked);
-        
-        signUpCloseButton.onClick.AddListener(OnQuitButtonClick);
-    }
-
-    void UnsetInputListeners()
-    {
-        emailInput.onValueChanged.RemoveListener(ValidateEmail);
-        signUpUsernameInput.onValueChanged.RemoveListener(ValidateUsername);
-        signUpPasswordInput.onValueChanged.RemoveListener(ValidatePassword);
-        rePasswordInput.onValueChanged.RemoveListener(ValidateRePassword);
-
-        termsToggle.onValueChanged.RemoveListener(ValidateTermsToggle);
-        signUpButton.onClick.RemoveListener(OnSignUpButtonClick);
-        backToLoginButton.onClick.RemoveListener(OnSwitchToLoginClicked);
-        signUpCloseButton.onClick.RemoveListener(OnQuitButtonClick);
-    }
     #endregion
-
-    
-
     void OnSignUpButtonClick()
     {
         connectingPanel = Instantiate(Resources.Load("LoadingPanel"), GameObject.Find("Canvas").transform) as GameObject;
@@ -273,32 +241,53 @@ public class SignUpPanel : MonoBehaviour
     void OnSwitchToLoginClicked()
     {
         SwitchToLoginClicked?.Invoke();
-        ClosePanel();
+        ClearPanel();
     }
 
-
-
-    public void InitPanel()
+    public override void SetListeners()
     {
-        ClearInputs();
-        SetInputListeners();
-        signUpErrorText.text = "";
-        myCanvas.enabled = true;
+        emailInput.onValueChanged.AddListener(ValidateEmail);
+        signUpUsernameInput.onValueChanged.AddListener(ValidateUsername);
+        signUpPasswordInput.onValueChanged.AddListener(ValidatePassword);
+        rePasswordInput.onValueChanged.AddListener(ValidateRePassword);
+
+        termsToggle.onValueChanged.AddListener(ValidateTermsToggle);
+        signUpButton.onClick.AddListener(OnSignUpButtonClick);
+        backToLoginButton.onClick.AddListener(OnSwitchToLoginClicked);
+
+        signUpCloseButton.onClick.AddListener(OnQuitButtonClick);
     }
 
-    public void ClosePanel()
+    public override void UnSetListeners()
     {
-        myCanvas.enabled = false;
+        emailInput.onValueChanged.RemoveListener(ValidateEmail);
+        signUpUsernameInput.onValueChanged.RemoveListener(ValidateUsername);
+        signUpPasswordInput.onValueChanged.RemoveListener(ValidatePassword);
+        rePasswordInput.onValueChanged.RemoveListener(ValidateRePassword);
+
+        termsToggle.onValueChanged.RemoveListener(ValidateTermsToggle);
+        signUpButton.onClick.RemoveListener(OnSignUpButtonClick);
+        backToLoginButton.onClick.RemoveListener(OnSwitchToLoginClicked);
+        signUpCloseButton.onClick.RemoveListener(OnQuitButtonClick);
+    }
+
+    public override void OverideClearPanel()
+    {
         signUpErrorText.text = "";
-        UnsetInputListeners();
+        signUpErrorText.gameObject.SetActive(false);
         ClearInputs();
         UnsetSFSListeners();
     }
 
-    private void Start()
+    public override void OverrideInitPanel()
     {
-        myCanvas = GetComponent<Canvas>();
-        myCanvas.enabled = false;
+        ClearInputs();
+        signUpErrorText.text = "";
+        signUpErrorText.gameObject.SetActive(false);
+    }
+
+    public override void OverrideStart()
+    {
         LoginPanel.SwitchToSignupClicked += OnSwitchToSigunpButtonClicked;
     }
 }

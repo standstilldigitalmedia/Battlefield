@@ -4,12 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CipherPanel : MonoBehaviour
+public class CipherPanel : BaseInventoryPanel
 {
-    public GameObject runePanelPrefab;
-    public GameObject inputPanelPrefab;
-    public GameObject runePrefab;
-    public GameObject inputPrefab;
+    [SerializeField] GameObject runePanelPrefab;
+    [SerializeField] GameObject inputPanelPrefab;
+    [SerializeField] GameObject runePrefab;
+    [SerializeField] GameObject inputPrefab;
+    //[SerializeField] Transform cipherPanelTransform;
+    public List<GameObject> spawned = new List<GameObject>();
 
     int FindLastSpace(char[] lastString)
     {
@@ -79,13 +81,17 @@ public class CipherPanel : MonoBehaviour
     {
         foreach (string objString in stringList)
         {
-            GameObject tempRunePanel = Instantiate(runePanelPrefab, gameObject.transform);
-            GameObject tempInputPanel = Instantiate(inputPanelPrefab, gameObject.transform);
+            GameObject tempRunePanel = Instantiate(runePanelPrefab, panel.transform);
+            GameObject tempInputPanel = Instantiate(inputPanelPrefab, panel.transform);
+            spawned.Add(tempRunePanel);
+            spawned.Add(tempInputPanel);
             char[] stringArray = objString.ToCharArray();
             for(int a = 0; a < objString.Length; a++)
             {
                 GameObject tempRune = Instantiate(runePrefab, tempRunePanel.transform);
                 GameObject tempInput= Instantiate(inputPrefab, tempInputPanel.transform);
+                spawned.Add(tempRune);
+                spawned.Add(tempInput);
 
                 tempRune.transform.GetChild(0).GetComponent<TMP_Text>().text = stringArray[a].ToString();
                 tempInput.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "";
@@ -104,11 +110,48 @@ public class CipherPanel : MonoBehaviour
         }
     }
 
-    private void Start()
+    void ClearSpawned()
+    {
+        foreach (GameObject go in spawned)
+        {
+            if (go.gameObject)
+            {
+                Destroy(go);
+            }
+        }
+        spawned.Clear();
+    }
+
+    public override void SetListeners()
+    {
+
+    }
+
+    public override void UnSetListeners()
+    {
+
+    }
+
+    public override void RaceChange()
+    {
+        
+    }
+
+    public override void BaseStart()
+    {
+        LeftPanel.CipherButtonClick += InitPanel;
+    }
+
+    public override void BaseInitPanel()
     {
         string testString = "THISISATESTTO SEE IF I CAN GET THIS THING TO WORK PROPERLY";
         char[] testCharArray = testString.ToCharArray();
         List<string> stringList = BreakCharIntoRows(testString);
         CreateRows(stringList);
+    }
+
+    public override void BaseClearPanel()
+    {
+        ClearSpawned();
     }
 }
