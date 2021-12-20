@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3c52ea0ce65b2434f8de6e4e3e1c02fc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sand
+  fontNames:
+  - Sand
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4b55a79af4f8a884fa6f651043ce4d23, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fc51b98c3e64e9146a2fda4f4c4e4962
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Merlin
+  fontNames:
+  - Merlin
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 34faa654a385e5044b0729301672e882, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

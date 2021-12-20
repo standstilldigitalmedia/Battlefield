@@ -181,7 +181,6 @@ public class LeftPanel : MonoBehaviour
     {
         SetListners();
         MainMenu.OnInventoryClick += InitPanel;
-        ClearAllPanelsClick?.Invoke();
         gameObject.SetActive(false);
     }
 }

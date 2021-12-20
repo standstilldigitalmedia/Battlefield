@@ -83,7 +83,7 @@ public abstract class BaseInventoryPanel : BasePanel
         LeftPanel.HakarClicked += OnHakarClick;
         LeftPanel.IritarClicked += OnIritarClick;
         LeftPanel.JarethAllianceClicked += OnJaraethAllianceClick;
-        
+        ClearPanel();
         BaseStart();
     }
 }

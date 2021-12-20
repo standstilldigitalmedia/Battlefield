@@ -26,11 +26,7 @@ public class RightPanel : MonoBehaviour
         LeftPanel.CipherButtonClick += InitPanel;
         LeftPanel.MainspringClicked += InitPanel;
         LeftPanel.RightPanelInited += InitPanel;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ClearPanel();
     }
 }

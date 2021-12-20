@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2871c937942815140a53591c6a45dda9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Viata Script SSi
+  fontNames:
+  - Viata Script SSi
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 523a9c408e00a7643a67195ff764892e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

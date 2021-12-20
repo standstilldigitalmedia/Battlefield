@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 78582bbf552900f468428c760a99b922
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Delavan
+  fontNames:
+  - Delavan
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2243a25597940f24db9859caa8e8cf22, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

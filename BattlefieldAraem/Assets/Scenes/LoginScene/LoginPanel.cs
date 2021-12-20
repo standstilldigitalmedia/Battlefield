@@ -123,6 +123,8 @@ public class LoginPanel : BasePanel
         //SFSConnection.Instance.sfs.Send(new ExtensionRequest("i", objOut, SFSConnection.Instance.sfs.LastJoinedRoom));
         connectingPanel.GetComponent<LoadingPanel>().UpdateProgress(0.75f);
         connectingPanel.GetComponent<LoadingPanel>().SetText("PreLobby joined.");
+        GameObject loadingPanel = Instantiate(Resources.Load("LoadingPanel"), GameObject.Find("Canvas").transform) as GameObject;
+        StartCoroutine(loadingPanel.GetComponent<LoadingPanel>().AsynchronousLoad("LobbyScene"));
     }
 
     void OnRoomJoinError(BaseEvent evt)

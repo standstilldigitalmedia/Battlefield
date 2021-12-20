@@ -1,7 +1,7 @@
-19 Nov 2021 | 22:08:35,173 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:08:35,516 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:08:35,548 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:08:35,594 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
+22 Nov 2021 | 04:57:23,234 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
+22 Nov 2021 | 04:57:23,774 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
+22 Nov 2021 | 04:57:23,794 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
+22 Nov 2021 | 04:57:23,884 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
 
 ==========================================
 LICENSE DETAILS
@@ -10,72 +10,28 @@ Type            : Community Edition
 Max users       : 100
 ==========================================
 
-19 Nov 2021 | 22:08:35,594 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:08:35,594 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:08:35,610 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:08:35,610 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:08:35,626 | INFO  | main | entities.managers.SFSZoneManager |     | 
+22 Nov 2021 | 04:57:23,884 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
+22 Nov 2021 | 04:57:23,884 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
+22 Nov 2021 | 04:57:23,894 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
+22 Nov 2021 | 04:57:23,904 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
+22 Nov 2021 | 04:57:23,934 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
+22 Nov 2021 | 04:57:23,944 | INFO  | main | entities.managers.SFSZoneManager |     | 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  >> Zone: BasicExamples 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-19 Nov 2021 | 22:08:35,657 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:08:35,657 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:08:35,704 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:08:36,049 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:08:36,050 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:08:36,051 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:08:38,002 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:10:15,747 | INFO  | http-nio-8080-exec-10 | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: WEBSOCKET, Logged: No, IP: 0:0:0:0:0:0:0:1 } on Server port: 8080 <---> 52288
-19 Nov 2021 | 22:10:15,767 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52288 ) , Type: JavaScript
-19 Nov 2021 | 22:10:15,773 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52288 ) , asSpect: false
-19 Nov 2021 | 22:12:17,345 | INFO  | http-nio-8080-exec-4 | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: WEBSOCKET, Logged: Yes, IP: 0:0:0:0:0:0:0:1:52288 }
-19 Nov 2021 | 22:12:17,347 | INFO  | SFSWorker:Sys:4 | v2.api.SFSApi |     | User disconnected: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52288 ) , SessionLen: 121580, Type: JavaScript
-19 Nov 2021 | 22:15:31,387 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:15:31,741 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:15:31,758 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:15:31,813 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:15:31,814 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:15:31,814 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:15:31,820 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:15:31,823 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:15:31,841 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:15:31,857 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:15:31,883 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:15:31,884 | INFO  | main | entities.managers.SFSZoneManager |     | 
+22 Nov 2021 | 04:57:23,984 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 04:57:23,984 | INFO  | main | entities.managers.SFSZoneManager |     | 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  >> Zone: Battlefield 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-19 Nov 2021 | 22:15:31,892 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:15:31,929 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:15:32,266 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:15:32,268 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
+22 Nov 2021 | 04:57:24,404 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 04:57:24,554 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
+22 Nov 2021 | 04:57:24,919 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
+22 Nov 2021 | 04:57:24,926 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
  _____ _____ _____    ___ __ __ 
 |   __|   __|   __|  |_  |  |  |
 |__   |   __|__   |  |  _|-   -|
@@ -86,551 +42,12 @@ Max users       : 100
 |__|__|_____|__|__|____/  |_|  
 [ 2.17.0 ] 
 
-19 Nov 2021 | 22:15:32,269 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:15:34,336 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:16:00,013 | INFO  | http-nio-8080-exec-1 | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: WEBSOCKET, Logged: No, IP: 0:0:0:0:0:0:0:1 } on Server port: 8080 <---> 52352
-19 Nov 2021 | 22:16:00,038 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52352 ) , Type: JavaScript
-19 Nov 2021 | 22:16:00,045 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52352 ) , asSpect: false
-19 Nov 2021 | 22:16:18,083 | INFO  | http-nio-8080-exec-9 | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: WEBSOCKET, Logged: Yes, IP: 0:0:0:0:0:0:0:1:52352 }
-19 Nov 2021 | 22:16:18,085 | INFO  | SFSWorker:Sys:4 | v2.api.SFSApi |     | User disconnected: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52352 ) , SessionLen: 18048, Type: JavaScript
-19 Nov 2021 | 22:16:22,609 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:16:22,966 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:16:22,984 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:16:23,037 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:16:23,039 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:16:23,039 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:16:23,044 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:16:23,047 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:16:23,067 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:16:23,081 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:16:23,108 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:16:23,109 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:16:23,121 | ERROR | main | entities.managers.SFSExtensionManager |     | java.lang.IllegalArgumentException:
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Exception: java.lang.IllegalArgumentException
-Message: An active DatabaseManager object is required!
-Description: Extension initialization failed.
-+--- --- ---+
-Stack Trace:
-+--- --- ---+
-com.smartfoxserver.v2.persistence.room.DBRoomStorage.<init>(DBRoomStorage.java:50)
-com.smartfoxserver.v2.persistence.room.RoomStorageFactory.initDBRoomStorage(RoomStorageFactory.java:27)
-com.smartfoxserver.v2.persistence.room.RoomStorageFactory.getStorage(RoomStorageFactory.java:12)
-com.smartfoxserver.v2.entities.SFSZone.initRoomPersistence(SFSZone.java:1432)
-battlefield.ZoneExtension.InitRoomPersistence(ZoneExtension.java:133)
-battlefield.ZoneExtension.init(ZoneExtension.java:343)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createExtension(SFSExtensionManager.java:303)
-com.smartfoxserver.v2.entities.managers.SFSZoneManager.createZone(SFSZoneManager.java:428)
-com.smartfoxserver.v2.entities.managers.SFSZoneManager.initializeZones(SFSZoneManager.java:239)
-com.smartfoxserver.v2.SmartFoxServer.start(SmartFoxServer.java:292)
-com.smartfoxserver.v2.Main.main(Main.java:13)
-sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-java.lang.reflect.Method.invoke(Method.java:498)
-com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:84)
-com.exe4j.runtime.WinLauncher.main(WinLauncher.java:94)
-com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:25)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:16:23,125 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:16:23,164 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:16:23,502 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:16:23,503 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:16:23,503 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:16:25,536 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:18:26,836 | INFO  | http-nio-8080-exec-1 | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: WEBSOCKET, Logged: No, IP: 0:0:0:0:0:0:0:1 } on Server port: 8080 <---> 52428
-19 Nov 2021 | 22:18:26,865 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52428 ) , Type: JavaScript
-19 Nov 2021 | 22:18:26,872 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52428 ) , asSpect: false
-19 Nov 2021 | 22:20:19,659 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:20:20,019 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:20:20,038 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:20:20,090 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:20:20,091 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:20:20,091 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:20:20,096 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:20:20,099 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:20:20,117 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:20:20,132 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:20:20,158 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:20:20,159 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:20:20,174 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,175 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,175 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,175 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,176 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,176 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,176 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,177 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:20,185 | ERROR | main | entities.managers.SFSExtensionManager |     | java.lang.NullPointerException:
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Exception: java.lang.NullPointerException
-Message: *** Null ***
-Description: Extension initialization failed.
-+--- --- ---+
-Stack Trace:
-+--- --- ---+
-battlefield.ZoneExtension.DeleteAllRooms(ZoneExtension.java:330)
-battlefield.ZoneExtension.init(ZoneExtension.java:352)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createExtension(SFSExtensionManager.java:303)
-com.smartfoxserver.v2.entities.managers.SFSZoneManager.createZone(SFSZoneManager.java:428)
-com.smartfoxserver.v2.entities.managers.SFSZoneManager.initializeZones(SFSZoneManager.java:239)
-com.smartfoxserver.v2.SmartFoxServer.start(SmartFoxServer.java:292)
-com.smartfoxserver.v2.Main.main(Main.java:13)
-sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-java.lang.reflect.Method.invoke(Method.java:498)
-com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:84)
-com.exe4j.runtime.WinLauncher.main(WinLauncher.java:94)
-com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:25)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:20:20,189 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:20:20,235 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:20:20,572 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:20:20,573 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:20:20,573 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:20:22,667 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:20:51,997 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:20:52,347 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:20:52,365 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:20:52,415 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:20:52,416 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:20:52,417 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:20:52,421 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:20:52,424 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:20:52,445 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:20:52,458 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:20:52,484 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:20:52,484 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:20:52,500 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,501 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,501 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,502 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,502 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,503 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,503 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,504 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLException: The DBManager is NOT active in this Zone. SQL Query failed. Please activate it the DBManager from the AdminTool 
-19 Nov 2021 | 22:20:52,515 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:20:52,560 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:20:52,890 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:20:52,891 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:20:52,892 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:20:54,945 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:21:11,119 | INFO  | http-nio-8080-exec-1 | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: WEBSOCKET, Logged: No, IP: 0:0:0:0:0:0:0:1 } on Server port: 8080 <---> 52454
-19 Nov 2021 | 22:21:11,138 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52454 ) , Type: JavaScript
-19 Nov 2021 | 22:21:11,144 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], { Zone: --=={{{ AdminZone }}}==-- }, ( User Name: sfsadmin, Id: 0, Priv: 0, Sess: 0:0:0:0:0:0:0:1:52454 ) , asSpect: false
-19 Nov 2021 | 22:21:44,816 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:21:45,168 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:21:45,186 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:21:45,236 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:21:45,237 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:21:45,237 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:21:45,242 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:21:45,244 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:21:45,265 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:21:45,278 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:21:45,304 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:21:45,305 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:21:45,574 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'solved, INDEX(playerID))' at line 1 
-19 Nov 2021 | 22:21:45,588 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:21:45,646 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:21:45,970 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:21:45,971 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:21:45,971 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:21:47,988 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:22:40,284 | INFO  | Thread-4 | entities.managers.SFSExtensionManager |     | Reloading extension: { Ext: BattlefieldExtension, Type: JAVA, Lev: ZONE, { Zone: Battlefield }, {} }
-19 Nov 2021 | 22:22:40,299 | WARN  | Thread-4 | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: Table 'bg_armyinventory' already exists 
-19 Nov 2021 | 22:22:40,302 | WARN  | Thread-4 | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: Table 'bg_craftinventory' already exists 
-19 Nov 2021 | 22:22:40,305 | WARN  | Thread-4 | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'TINYINT solved, INDEX(playerID))' at line 1 
-19 Nov 2021 | 22:22:42,964 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:22:43,313 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:22:43,330 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:22:43,380 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:22:43,381 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:22:43,382 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:22:43,386 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:22:43,389 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:22:43,407 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:22:43,421 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:22:43,447 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:22:43,448 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:22:43,676 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: Table 'bg_armyinventory' already exists 
-19 Nov 2021 | 22:22:43,680 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: Table 'bg_craftinventory' already exists 
-19 Nov 2021 | 22:22:43,683 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'TINYINT solved, INDEX(playerID))' at line 1 
-19 Nov 2021 | 22:22:43,696 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:22:43,753 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:22:44,069 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:22:44,070 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:22:44,070 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:22:46,065 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:25:42,554 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:25:42,916 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:25:42,934 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:25:42,985 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:25:42,986 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:25:42,986 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:25:42,991 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:25:42,994 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:25:43,012 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:25:43,027 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:25:43,053 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:25:43,054 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:25:43,332 | WARN  | main | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'TINYINT(255) solved, INDEX(playerID))' at line 1 
-19 Nov 2021 | 22:25:43,346 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:25:43,404 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:25:43,733 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:25:43,734 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:25:43,734 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:25:45,778 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:27:02,059 | INFO  | Thread-4 | entities.managers.SFSExtensionManager |     | Reloading extension: { Ext: BattlefieldExtension, Type: JAVA, Lev: ZONE, { Zone: Battlefield }, {} }
-19 Nov 2021 | 22:27:09,389 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:27:09,743 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:27:09,761 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:27:09,815 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:27:09,816 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:27:09,816 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:27:09,821 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:27:09,824 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:27:09,842 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:27:09,858 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:27:09,883 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:27:09,884 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:27:10,117 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:27:10,173 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:27:10,494 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:27:10,495 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:27:10,495 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:27:12,495 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:29:53,562 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:61896 } on Server port: 9933 <---> 61896
-19 Nov 2021 | 22:29:53,613 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
-19 Nov 2021 | 22:29:53,618 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:61896 ) , Type: Unity / .Net
-19 Nov 2021 | 22:29:53,632 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: SQL Failed: java.sql.SQLSyntaxErrorException: Table 'sfs2x.bg_cipher' doesn't exist 
-19 Nov 2021 | 22:31:32,421 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:31:32,771 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:31:32,788 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:31:32,838 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:31:32,839 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:31:32,839 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:31:32,844 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:31:32,847 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:31:32,867 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:31:32,881 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:31:32,906 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:31:32,907 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:31:33,141 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:31:33,198 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:31:33,516 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:31:33,517 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:31:33,518 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:31:35,563 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:31:48,630 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:62248 } on Server port: 9933 <---> 62248
-19 Nov 2021 | 22:31:48,676 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
-19 Nov 2021 | 22:31:48,681 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62248 ) , Type: Unity / .Net
-19 Nov 2021 | 22:31:48,698 | WARN  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | com.smartfoxserver.v2.exceptions.SFSExtensionException:
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Exception: com.smartfoxserver.v2.exceptions.SFSExtensionException
-Message: Extension boot error. The provided path is not a directory: extensions/Battlefield
-Description: Failure while creating room extension.
-Possible Causes: If the CreateRoom request was sent from client make sure that the extension name matches the name of an existing extension
-+--- --- ---+
-Stack Trace:
-+--- --- ---+
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createJavaExtension(SFSExtensionManager.java:346)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createExtension(SFSExtensionManager.java:260)
-com.smartfoxserver.v2.entities.managers.SFSRoomManager.createRoomExtension(SFSRoomManager.java:247)
-com.smartfoxserver.v2.entities.managers.SFSRoomManager.createRoom(SFSRoomManager.java:194)
-com.smartfoxserver.v2.entities.SFSZone.createRoom(SFSZone.java:261)
-com.smartfoxserver.v2.api.SFSApi.createRoom(SFSApi.java:739)
-com.smartfoxserver.v2.api.SFSApi.createRoom(SFSApi.java:706)
-battlefield.JoinZoneEvent.handleServerEvent(JoinZoneEvent.java:76)
-com.smartfoxserver.v2.extensions.SFSExtension.handleServerEvent(SFSExtension.java:259)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.dispatchEvent(SFSExtensionManager.java:769)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.dispatchZoneLevelEvent(SFSExtensionManager.java:690)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.handleServerEvent(SFSExtensionManager.java:891)
-com.smartfoxserver.v2.core.SFSEventManager$SFSEventRunner.run(SFSEventManager.java:66)
-java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-java.lang.Thread.run(Thread.java:748)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:31:48,699 | INFO  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | Room created: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:31:48,701 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62248 ) , asSpect: false
-19 Nov 2021 | 22:32:36,490 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:32:36,857 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:32:36,876 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:32:36,930 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:32:36,931 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:32:36,931 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:32:36,936 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:32:36,939 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:32:36,959 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:32:36,975 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:32:37,002 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:32:37,003 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:32:37,254 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:32:37,311 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:32:37,642 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:32:37,643 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:32:37,644 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:32:39,759 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:32:55,524 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:62358 } on Server port: 9933 <---> 62358
-19 Nov 2021 | 22:32:55,576 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
-19 Nov 2021 | 22:32:55,582 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62358 ) , Type: Unity / .Net
-19 Nov 2021 | 22:32:55,596 | WARN  | SFSWorker:Ext:2 | entities.managers.SFSExtensionManager |     | java.lang.NullPointerException:
+22 Nov 2021 | 04:57:24,926 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
+22 Nov 2021 | 04:57:28,564 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
+22 Nov 2021 | 04:57:42,217 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:49232 } on Server port: 9933 <---> 49232
+22 Nov 2021 | 04:57:42,257 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
+22 Nov 2021 | 04:57:42,263 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:49232 ) , Type: Unity / .Net
+22 Nov 2021 | 04:57:42,272 | WARN  | SFSWorker:Ext:4 | entities.managers.SFSExtensionManager |     | java.lang.NullPointerException:
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Exception: java.lang.NullPointerException
 Message: *** Null ***
@@ -651,12 +68,12 @@ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 java.lang.Thread.run(Thread.java:748)
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-19 Nov 2021 | 22:33:13,344 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: DEFAULT, Logged: Yes, IP: 127.0.0.1:62358 }
-19 Nov 2021 | 22:33:13,346 | INFO  | SFSWorker:Sys:4 | v2.api.SFSApi |     | User disconnected: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62358 ) , SessionLen: 17765, Type: Unity / .Net
-19 Nov 2021 | 22:33:40,964 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:33:41,321 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:33:41,339 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:33:41,390 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
+22 Nov 2021 | 04:57:47,383 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: DEFAULT, Logged: Yes, IP: 127.0.0.1:49232 }
+22 Nov 2021 | 04:57:47,386 | INFO  | SFSWorker:Sys:3 | v2.api.SFSApi |     | User disconnected: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:49232 ) , SessionLen: 5124, Type: Unity / .Net
+22 Nov 2021 | 04:58:11,591 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
+22 Nov 2021 | 04:58:11,958 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
+22 Nov 2021 | 04:58:11,976 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
+22 Nov 2021 | 04:58:12,034 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
 
 ==========================================
 LICENSE DETAILS
@@ -665,28 +82,28 @@ Type            : Community Edition
 Max users       : 100
 ==========================================
 
-19 Nov 2021 | 22:33:41,391 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:33:41,391 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:33:41,395 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:33:41,398 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:33:41,418 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:33:41,433 | INFO  | main | entities.managers.SFSZoneManager |     | 
+22 Nov 2021 | 04:58:12,035 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
+22 Nov 2021 | 04:58:12,035 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
+22 Nov 2021 | 04:58:12,040 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
+22 Nov 2021 | 04:58:12,043 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
+22 Nov 2021 | 04:58:12,063 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
+22 Nov 2021 | 04:58:12,077 | INFO  | main | entities.managers.SFSZoneManager |     | 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  >> Zone: BasicExamples 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-19 Nov 2021 | 22:33:41,458 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:33:41,459 | INFO  | main | entities.managers.SFSZoneManager |     | 
+22 Nov 2021 | 04:58:12,104 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 04:58:12,104 | INFO  | main | entities.managers.SFSZoneManager |     | 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  >> Zone: Battlefield 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-19 Nov 2021 | 22:33:41,696 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:33:41,752 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:33:42,074 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:33:42,075 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
+22 Nov 2021 | 04:58:12,354 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 04:58:12,413 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
+22 Nov 2021 | 04:58:12,750 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
+22 Nov 2021 | 04:58:12,751 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
  _____ _____ _____    ___ __ __ 
 |   __|   __|   __|  |_  |  |  |
 |__   |   __|__   |  |  _|-   -|
@@ -697,99 +114,39 @@ Max users       : 100
 |__|__|_____|__|__|____/  |_|  
 [ 2.17.0 ] 
 
-19 Nov 2021 | 22:33:42,076 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:33:44,184 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:33:57,699 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:62390 } on Server port: 9933 <---> 62390
-19 Nov 2021 | 22:33:57,741 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
-19 Nov 2021 | 22:33:57,746 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62390 ) , Type: Unity / .Net
-19 Nov 2021 | 22:33:57,759 | WARN  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | com.smartfoxserver.v2.exceptions.SFSExtensionException:
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Exception: com.smartfoxserver.v2.exceptions.SFSExtensionException
-Message: Extension boot error. The provided path is not a directory: extensions/Battlefield
-Description: Failure while creating room extension.
-Possible Causes: If the CreateRoom request was sent from client make sure that the extension name matches the name of an existing extension
-+--- --- ---+
-Stack Trace:
-+--- --- ---+
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createJavaExtension(SFSExtensionManager.java:346)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.createExtension(SFSExtensionManager.java:260)
-com.smartfoxserver.v2.entities.managers.SFSRoomManager.createRoomExtension(SFSRoomManager.java:247)
-com.smartfoxserver.v2.entities.managers.SFSRoomManager.createRoom(SFSRoomManager.java:194)
-com.smartfoxserver.v2.entities.SFSZone.createRoom(SFSZone.java:261)
-com.smartfoxserver.v2.api.SFSApi.createRoom(SFSApi.java:739)
-com.smartfoxserver.v2.api.SFSApi.createRoom(SFSApi.java:706)
-battlefield.JoinZoneEvent.handleServerEvent(JoinZoneEvent.java:76)
-com.smartfoxserver.v2.extensions.SFSExtension.handleServerEvent(SFSExtension.java:259)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.dispatchEvent(SFSExtensionManager.java:769)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.dispatchZoneLevelEvent(SFSExtensionManager.java:690)
-com.smartfoxserver.v2.entities.managers.SFSExtensionManager.handleServerEvent(SFSExtensionManager.java:891)
-com.smartfoxserver.v2.core.SFSEventManager$SFSEventRunner.run(SFSEventManager.java:66)
-java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-java.lang.Thread.run(Thread.java:748)
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:33:57,759 | INFO  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | Room created: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:33:57,761 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62390 ) , asSpect: false
-19 Nov 2021 | 22:35:34,529 | INFO  | Thread-4 | entities.managers.SFSExtensionManager |     | Reloading extension: { Ext: BattlefieldExtension, Type: JAVA, Lev: ZONE, { Zone: Battlefield }, {} }
-19 Nov 2021 | 22:35:45,853 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Boot sequence starts...
-19 Nov 2021 | 22:35:46,219 | INFO  | main | v2.core.SFSEventManager |     | SFSEventManager initialized
-19 Nov 2021 | 22:35:46,239 | INFO  | main | vfs.impl.DefaultFileReplicator |     | Using "C:\Users\bnest\AppData\Local\Temp\vfs_cache" as temporary files store.
-19 Nov 2021 | 22:35:46,293 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | License loaded:
-
-==========================================
-LICENSE DETAILS
-------------------------------------------
-Type            : Community Edition
-Max users       : 100
-==========================================
-
-19 Nov 2021 | 22:35:46,294 | INFO  | main | entities.managers.SFSBannedUserStorage |     | BanUserStorage initialized
-19 Nov 2021 | 22:35:46,295 | INFO  | main | entities.managers.SFSBannedUserManager |     | No BannedUser data available, starting with a clean DB.
-19 Nov 2021 | 22:35:46,299 | INFO  | main | smartfoxserver.v2.SmartFoxServer |     | Protocol Type is: BINARY
-19 Nov 2021 | 22:35:46,303 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\BasicExamples.zone.xml
-19 Nov 2021 | 22:35:46,322 | INFO  | main | v2.config.DefaultConfigLoader |     | Loading: zones\Battlefield.zone.xml
-19 Nov 2021 | 22:35:46,337 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: BasicExamples 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:35:46,364 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: BasicExamples }, [ Room: The Lobby, Id: 0, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:35:46,365 | INFO  | main | entities.managers.SFSZoneManager |     | 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- >> Zone: Battlefield 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-19 Nov 2021 | 22:35:46,614 | INFO  | main | entities.managers.SFSRoomManager |     | Room created: { Zone: --=={{{ AdminZone }}}==-- }, [ Room: AdminRoom, Id: 1, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:35:46,674 | INFO  | main | v2.core.AdminToolService |     | AdminTool Service started
-19 Nov 2021 | 22:35:47,099 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | Listening Sockets: { 0.0.0.0:9933, (Tcp) } { 127.0.0.1:9933, (Udp) } 
-19 Nov 2021 | 22:35:47,100 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     |  
- _____ _____ _____    ___ __ __ 
-|   __|   __|   __|  |_  |  |  |
-|__   |   __|__   |  |  _|-   -|
-|_____|__|  |_____|  |___|__|__|                                         
- _____ _____ _____ ____  __ __ 
-| __  |   __|  _  |    \|  |  |
-|    -|   __|     |  |  |_   _|
-|__|__|_____|__|__|____/  |_|  
-[ 2.17.0 ] 
-
-19 Nov 2021 | 22:35:47,101 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
-19 Nov 2021 | 22:35:49,270 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
-19 Nov 2021 | 22:36:06,263 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:62421 } on Server port: 9933 <---> 62421
-19 Nov 2021 | 22:36:06,313 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
-19 Nov 2021 | 22:36:06,319 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62421 ) , Type: Unity / .Net
-19 Nov 2021 | 22:36:06,333 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: init room 
-19 Nov 2021 | 22:36:06,334 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: constructor 
-19 Nov 2021 | 22:36:06,335 | INFO  | pool-1-thread-4 | Extensions |     | {BattlefieldExtension}: running 
-19 Nov 2021 | 22:36:06,335 | INFO  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | Room created: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], type = SFSRoom
-19 Nov 2021 | 22:36:06,339 | INFO  | pool-1-thread-4 | Extensions |     | {BattlefieldExtension}: in loop 0 
-19 Nov 2021 | 22:36:06,341 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62421 ) , asSpect: false
-19 Nov 2021 | 22:36:07,336 | INFO  | pool-1-thread-2 | Extensions |     | {BattlefieldExtension}: running 
-19 Nov 2021 | 22:36:07,336 | INFO  | pool-1-thread-2 | Extensions |     | {BattlefieldExtension}: in loop 0 
-19 Nov 2021 | 22:36:07,339 | INFO  | pool-1-thread-2 | Extensions |     | {BattlefieldExtension}: should end 0 
-19 Nov 2021 | 22:36:30,413 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: DEFAULT, Logged: Yes, IP: 127.0.0.1:62421 }
-19 Nov 2021 | 22:36:30,415 | INFO  | SFSWorker:Sys:1 | entities.managers.SFSRoomManager |     | Room removed: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], Duration: 24086
-19 Nov 2021 | 22:36:30,417 | INFO  | SFSWorker:Sys:1 | v2.api.SFSApi |     | User disconnected: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:62421 ) , SessionLen: 24098, Type: Unity / .Net
+22 Nov 2021 | 04:58:12,752 | INFO  | SFSWorker:Sys:1 | smartfoxserver.v2.SmartFoxServer |     | SmartFoxServer 2X (2.17.0) READY!
+22 Nov 2021 | 04:58:14,904 | INFO  | TomcatRunner | tomcat.bluebox.BBSessionFilter |     | BlueBox Service (4.0.2) READY.
+22 Nov 2021 | 04:58:27,638 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 1, Type: DEFAULT, Logged: No, IP: 127.0.0.1:49289 } on Server port: 9933 <---> 49289
+22 Nov 2021 | 04:58:27,683 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
+22 Nov 2021 | 04:58:27,689 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:49289 ) , Type: Unity / .Net
+22 Nov 2021 | 04:58:27,702 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: init room 
+22 Nov 2021 | 04:58:27,703 | INFO  | SFSWorker:Ext:4 | Extensions |     | {BattlefieldExtension}: constructor 
+22 Nov 2021 | 04:58:27,704 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: running 
+22 Nov 2021 | 04:58:27,704 | INFO  | SFSWorker:Ext:4 | entities.managers.SFSRoomManager |     | Room created: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 04:58:27,704 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: in loop 0 
+22 Nov 2021 | 04:58:27,709 | INFO  | SFSWorker:Ext:4 | v2.api.SFSApi |     | Room joined: [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:49289 ) , asSpect: false
+22 Nov 2021 | 04:58:28,704 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: running 
+22 Nov 2021 | 04:58:28,704 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: in loop 0 
+22 Nov 2021 | 04:58:28,707 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: should end 0 
+22 Nov 2021 | 04:58:39,177 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 1, Type: DEFAULT, Logged: Yes, IP: 127.0.0.1:49289 }
+22 Nov 2021 | 04:58:39,184 | INFO  | SFSWorker:Sys:3 | entities.managers.SFSRoomManager |     | Room removed: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 2, Group: default, isGame: false ], Duration: 11486
+22 Nov 2021 | 04:58:39,185 | INFO  | SFSWorker:Sys:3 | v2.api.SFSApi |     | User disconnected: { Zone: Battlefield }, ( User Name: testusername, Id: 0, Priv: 0, Sess: 127.0.0.1:49289 ) , SessionLen: 11497, Type: Unity / .Net
+22 Nov 2021 | 04:59:12,762 | INFO  | pool-1-thread-1 | util.stats.CCULoggerTask |     | CCU stats: { Zone: --=={{{ AdminZone }}}==-- }, CCU: 0/0
+22 Nov 2021 | 04:59:12,763 | INFO  | pool-1-thread-1 | util.stats.CCULoggerTask |     | CCU stats: { Zone: BasicExamples }, CCU: 0/0
+22 Nov 2021 | 04:59:12,765 | INFO  | pool-1-thread-1 | util.stats.CCULoggerTask |     | CCU stats: { Zone: Battlefield }, CCU: 0/0
+22 Nov 2021 | 04:59:12,767 | INFO  | pool-1-thread-1 | util.stats.CCULoggerTask |     | CCU stats: CCU: 0/0
+22 Nov 2021 | 05:20:23,964 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session created: { Id: 2, Type: DEFAULT, Logged: No, IP: 127.0.0.1:49388 } on Server port: 9933 <---> 49388
+22 Nov 2021 | 05:20:24,002 | INFO  | SFSWorker:Ext:1 | Extensions |     | {BattlefieldExtension}: *********userid = 1 
+22 Nov 2021 | 05:20:24,003 | INFO  | SFSWorker:Ext:1 | v2.api.SFSApi |     | User login: { Zone: Battlefield }, ( User Name: testusername, Id: 1, Priv: 0, Sess: 127.0.0.1:49388 ) , Type: Unity / .Net
+22 Nov 2021 | 05:20:24,012 | INFO  | SFSWorker:Ext:1 | Extensions |     | {BattlefieldExtension}: init room 
+22 Nov 2021 | 05:20:24,012 | INFO  | SFSWorker:Ext:1 | Extensions |     | {BattlefieldExtension}: constructor 
+22 Nov 2021 | 05:20:24,013 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: running 
+22 Nov 2021 | 05:20:24,013 | INFO  | SFSWorker:Ext:1 | entities.managers.SFSRoomManager |     | Room created: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 3, Group: default, isGame: false ], type = SFSRoom
+22 Nov 2021 | 05:20:24,019 | INFO  | pool-1-thread-3 | Extensions |     | {BattlefieldExtension}: in loop 0 
+22 Nov 2021 | 05:20:24,019 | INFO  | SFSWorker:Ext:1 | v2.api.SFSApi |     | Room joined: [ Room: testusernameCampaign, Id: 3, Group: default, isGame: false ], { Zone: Battlefield }, ( User Name: testusername, Id: 1, Priv: 0, Sess: 127.0.0.1:49388 ) , asSpect: false
+22 Nov 2021 | 05:20:25,027 | INFO  | pool-1-thread-4 | Extensions |     | {BattlefieldExtension}: running 
+22 Nov 2021 | 05:20:25,027 | INFO  | pool-1-thread-4 | Extensions |     | {BattlefieldExtension}: in loop 0 
+22 Nov 2021 | 05:20:25,029 | INFO  | pool-1-thread-4 | Extensions |     | {BattlefieldExtension}: should end 0 
+22 Nov 2021 | 05:20:34,063 | INFO  | SocketReader | bitswarm.sessions.DefaultSessionManager |     | Session removed: { Id: 2, Type: DEFAULT, Logged: Yes, IP: 127.0.0.1:49388 }
+22 Nov 2021 | 05:20:34,064 | INFO  | SFSWorker:Sys:3 | entities.managers.SFSRoomManager |     | Room removed: { Zone: Battlefield }, [ Room: testusernameCampaign, Id: 3, Group: default, isGame: false ], Duration: 10054
+22 Nov 2021 | 05:20:34,066 | INFO  | SFSWorker:Sys:3 | v2.api.SFSApi |     | User disconnected: { Zone: Battlefield }, ( User Name: testusername, Id: 1, Priv: 0, Sess: 127.0.0.1:49388 ) , SessionLen: 10063, Type: Unity / .Net

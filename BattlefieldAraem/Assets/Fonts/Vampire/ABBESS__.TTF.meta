@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ea4b4078b3dd35643a0c0eb3e12597ce
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Abbess
+  fontNames:
+  - Abbess
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6563045b23dad00458543154fe6de6e3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
