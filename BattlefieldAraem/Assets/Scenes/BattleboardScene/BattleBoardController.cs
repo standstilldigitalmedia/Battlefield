@@ -53,6 +53,19 @@ public class BattleBoardController : MonoBehaviour
         return null;
     }
 
+    GameObject FindTrayTileByValue(int value)
+    {
+        foreach(GameObject tile in tilePieceList)
+        {
+            TilePiece tp = tile.GetComponent<TilePiece>();
+            if(tp.type == TileTypes.myLayoutTrayTile && tp.value == value)
+            {
+                return tile;
+            }
+        }
+        return null;
+    }
+
     void ClearAllOutlines()
     {
         foreach(GameObject tile in tileButtonList)
@@ -86,7 +99,7 @@ public class BattleBoardController : MonoBehaviour
         pieceTile.value = v;
     }
 
-    void SpawnTile(float x, float y, int type, bool piece, bool enabled = true)
+    void SpawnTile(float x, float y, int type, Color color, bool piece, bool enabled = true)
     {
         GameObject tile;
         tileVector.x = x;
@@ -95,7 +108,10 @@ public class BattleBoardController : MonoBehaviour
         if (piece)
         {
             tile = Instantiate(tilePiecePrefab, pieceTileLayerTransform) as GameObject;
-            tile.GetComponent<TilePiece>().type = type;
+            TilePiece tp = tile.GetComponent<TilePiece>();
+            tp.type = type;
+            tp.color = color;
+            tp.pieceImage.color = color;
             tile.transform.localPosition = tileVector;
             tilePieceList.Add(tile);
         }
@@ -108,7 +124,7 @@ public class BattleBoardController : MonoBehaviour
         }
     }
 
-    void SpawnMyLayoutFieldTiles(bool piece)
+    void LayoutSpawnMyFieldTiles(bool piece)
     {
         float x = -462.7f;
         float y = -153.2f;
@@ -120,11 +136,11 @@ public class BattleBoardController : MonoBehaviour
             {
                 if (piece)
                 {
-                    SpawnTile(x, y, type, piece);
+                    SpawnTile(x, y, type, transparent, piece);
                 }
                 else
                 {
-                    SpawnTile(x, y, type, piece);
+                    SpawnTile(x, y, type, transparent, piece);
                 }
                 x = x + 102.9f;
             }
@@ -133,29 +149,29 @@ public class BattleBoardController : MonoBehaviour
         }
     }
 
-    void SpawnMyLayoutTrayTiles(bool piece)
+    void LayoutSpawnMyTrayTiles(bool piece, Color color)
     {
         float x = -462.7f;
         float y = -561.2f;
         int type = TileTypes.myLayoutTrayTile;
 
-        SpawnTile(x, y, type, piece);
+        SpawnTile(x, y, type, color, piece);
         x = 463.4f;
-        SpawnTile(x, y, type, piece);
+        SpawnTile(x, y, type, color, piece);
         x = -462.7f;
         y = y - 102f;
 
         for (int a = 0; a < 10; a++)
         {
-            SpawnTile(x, y, type, piece);
+            SpawnTile(x, y, type, color, piece);
             x = x + 102.9f;
         }
     }
 
-    void InitMyLayoutTrayTiles(Color color)
+    void LayoutInitMyTrayTiles(Color color)
     {
-        SpawnMyLayoutTrayTiles(false);
-        SpawnMyLayoutTrayTiles(true);
+        LayoutSpawnMyTrayTiles(false,color);
+        LayoutSpawnMyTrayTiles(true,color);
         foreach (GameObject tile in tilePieceList)
         {
             //tile.AddComponent<TrayTile>();
@@ -177,21 +193,81 @@ public class BattleBoardController : MonoBehaviour
         SetPieceTile(tileArray[11], 1, 10);
     }
 
-    void SpawnFieldtileFromLayoutTrayTile(TileButton tbClicked, TilePiece tpClicked)
+    void LayoutSpawnFieldtileFromTrayTile(TileButton tbClicked, TilePiece tpClicked)
     {
         //if the clicked field tile already has a piece on it
         if(tpClicked)
         {
+            //put the clicked tile back in the tray
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////// Trouble here //////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+            GameObject trayTile = FindTrayTileByValue(tpSelected.value);
+            if (trayTile)
+            {
+                TilePiece tp = trayTile.GetComponent<TilePiece>();
+                tp.count++;
+                SetPieceTile(trayTile, tp.count, tp.value);
+                tp.pieceImage.color = tp.color;
+
+                SetPieceTile(tpClicked.gameObject, 0, tpSelected.value);
+            }
+            else
+            {
+                ClearAllOutlines();
+                tbSelected = null;
+                tpSelected = null;
+            }
         }
         else
         {
             tileVector.x = tbClicked.myTransform.localPosition.x;
             tileVector.y = tbClicked.myTransform.localPosition.y;
-            SpawnTile(tileVector.x, tileVector.y, TileTypes.myLayoutFieldTile, true);
+            SpawnTile(tileVector.x, tileVector.y, TileTypes.myLayoutFieldTile, tpSelected.color, true);
             GameObject[] tileArray = tilePieceList.ToArray();
             SetPieceTile(tileArray[tileArray.Length - 1], 0, tpSelected.value);
-
+            tileArray[tileArray.Length - 1].GetComponent<TilePiece>().countText.text = "";
             tpSelected.count--;
             if (tpSelected.count < 1)
             {
@@ -204,7 +280,70 @@ public class BattleBoardController : MonoBehaviour
         }
     }
 
-    void ProcessLayoutTileClick(TileButton tbClicked, TilePiece tpClicked)
+    void LayoutSwapFieldtileForFieldTile(TileButton tbClicked, TilePiece tpClicked)
+    {
+        int tempValue;
+        if(tpSelected)
+        {
+            tempValue = tpSelected.value;
+            if(tpClicked)
+            {
+                SetPieceTile(tpSelected.gameObject, 0, tpClicked.value);
+                tpSelected.countText.text = "";
+
+                SetPieceTile(tpClicked.gameObject, 0, tempValue);
+                tpClicked.countText.text = "";
+            }
+            else
+            {
+                //if there is a piece on the selected tile and
+                //there isn't a piece on the clicked tile
+                //set the clicked tile to the selected tile vaule
+                tpSelected.myTransform.localPosition = tbClicked.myTransform.localPosition;
+            }
+            
+        }
+        else
+        {
+            //if there is no piece on the selected tile
+            if (tpClicked)
+            {
+                //and there is a piece on the clicked tile
+                tpClicked.myTransform.localPosition = tbSelected.myTransform.localPosition;
+            }
+            else
+            {
+                //and there is no piece on the clicked tile
+                ClearAllOutlines();
+            }
+        }
+    }
+
+    void LayoutPutFieldtileBackInTray()
+    {
+        GameObject trayTile = FindTrayTileByValue(tpSelected.value);
+        if(trayTile)
+        {
+            TilePiece tpClicked = trayTile.GetComponent<TilePiece>();
+            tpClicked.count++;
+            SetPieceTile(trayTile, tpClicked.count, tpClicked.value);
+            tpClicked.pieceImage.color = tpClicked.color;
+
+            if (tpSelected.gameObject)
+            {
+                tilePieceList.Remove(tpSelected.gameObject);
+                Destroy(tpSelected.gameObject);
+            }
+        }
+        else
+        {
+            ClearAllOutlines();
+            tbSelected = null;
+            tpSelected = null;
+        }
+    }
+
+    void LayoutProcessTileClick(TileButton tbClicked, TilePiece tpClicked)
     {
         int typeSelected;
         int typeClicked;
@@ -214,7 +353,7 @@ public class BattleBoardController : MonoBehaviour
         }
         else
         {
-            typeSelected = tpSelected.type;
+            typeSelected = tbSelected.type;
         }
 
         if(tpClicked)
@@ -235,7 +374,7 @@ public class BattleBoardController : MonoBehaviour
                         ClearAllOutlines();
                         break;
                     case TileTypes.myLayoutFieldTile:
-                        SpawnFieldtileFromLayoutTrayTile(tbClicked, tpClicked);
+                        LayoutSpawnFieldtileFromTrayTile(tbClicked, tpClicked);
                         break;
                 }
                 break;
@@ -243,10 +382,10 @@ public class BattleBoardController : MonoBehaviour
                 switch (typeClicked)
                 {
                     case TileTypes.myLayoutTrayTile:
-
+                        LayoutPutFieldtileBackInTray();
                         break;
                     case TileTypes.myLayoutFieldTile:
-
+                        LayoutSwapFieldtileForFieldTile(tbClicked, tpClicked);
                         break;
                 }
                 break;
@@ -259,7 +398,7 @@ public class BattleBoardController : MonoBehaviour
     {
         if(isLayoutBoard)
         {
-            ProcessLayoutTileClick(tbClicked, tpClicked);
+            LayoutProcessTileClick(tbClicked, tpClicked);
         }
         else
         {
@@ -324,8 +463,8 @@ public class BattleBoardController : MonoBehaviour
     {
         if(isLayoutBoard)
         {
-            InitMyLayoutTrayTiles(Color.red);
-            SpawnMyLayoutFieldTiles(false);
+            LayoutInitMyTrayTiles(Color.red);
+            LayoutSpawnMyFieldTiles(false);
         }
         else
         {

@@ -432,6 +432,8 @@ MonoBehaviour:
   tilePiecePrefab: {fileID: 9005192796642454306, guid: 8ebcf069ee9f64f43a94201564c4fd15, type: 3}
   tileButtonPrefab: {fileID: 5482152450682086054, guid: e850f53173b755541b066a35338e86bf, type: 3}
   transparent: {r: 0, g: 0, b: 0, a: 0}
+  tbSelected: {fileID: 0}
+  tpSelected: {fileID: 0}
 --- !u!114 &726371766
 MonoBehaviour:
   m_ObjectHideFlags: 0

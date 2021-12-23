@@ -10,6 +10,7 @@ public class TilePiece : MonoBehaviour
     [Space]
     [Header("Don't Assign")]
     public Transform myTransform;
+    public Color color;
 
     public int value;
     public int count;
