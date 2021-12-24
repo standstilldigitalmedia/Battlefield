@@ -4,31 +4,39 @@ using UnityEngine.UI;
 
 public class BattleBoardController : MonoBehaviour
 {
-    public bool isLayoutBoard;
-    public Image battleboardImage;
-    public Transform pieceTileLayerTransform;
-    public Transform buttonTileLayerTransform;
-    public GameObject tilePiecePrefab;
-    public GameObject tileButtonPrefab;
+    [SerializeField] bool isLayoutBoard;
+    [SerializeField] Image battleboardImage;
+    [SerializeField] Transform pieceTileLayerTransform;
+    [SerializeField] Transform buttonTileLayerTransform;
+    [SerializeField] GameObject tilePiecePrefab;
+    [SerializeField] GameObject tileButtonPrefab;
     [Space]
     [Header("Don't Assign")]
     public Color transparent = new Color(0, 0, 0, 0);
+    public Vector3 reusableVector = new Vector3(0, 0, 0);
     public static BattleBoardController Instance { get; private set; }
 
     List<GameObject> tileButtonList = new List<GameObject>();
     List<GameObject> tilePieceList = new List<GameObject>();
-    Vector3 tileVector = new Vector3(0, 0, 0);
+
     public TileButton tbSelected;
     public TilePiece tpSelected;
+
+    void ResetSelected()
+    {
+        ClearAllOutlines();
+        tbSelected = null;
+        tpSelected = null;
+    }
 
     GameObject FindTileButton(float x, float y)
     {
         foreach (GameObject tile in tileButtonList)
         {
-            if(tile.GetComponent<TileButton>())
+            if (tile.GetComponent<TileButton>())
             {
-                Transform tbTransform = tile.GetComponent<TileButton>().myTransform;
-                if(x == tbTransform.localPosition.x && y == tbTransform.localPosition.y)
+                Vector3 position = tile.GetComponent<TileButton>().GetPosition();
+                if (x == position.x && y == position.y)
                 {
                     return tile;
                 }
@@ -37,14 +45,14 @@ public class BattleBoardController : MonoBehaviour
         return null;
     }
 
-    GameObject FindTilePiece(float x, float y)
+    public GameObject FindTilePiece(float x, float y)
     {
         foreach (GameObject tile in tilePieceList)
         {
             if (tile.GetComponent<TilePiece>())
             {
-                Transform tbTransform = tile.GetComponent<TilePiece>().myTransform;
-                if (x == tbTransform.localPosition.x && y == tbTransform.localPosition.y)
+                Vector3 position = tile.GetComponent<TilePiece>().GetPosition();
+                if (x == position.x && y == position.y)
                 {
                     return tile;
                 }
@@ -55,10 +63,10 @@ public class BattleBoardController : MonoBehaviour
 
     GameObject FindTrayTileByValue(int value)
     {
-        foreach(GameObject tile in tilePieceList)
+        foreach (GameObject tile in tilePieceList)
         {
             TilePiece tp = tile.GetComponent<TilePiece>();
-            if(tp.type == TileTypes.myLayoutTrayTile && tp.value == value)
+            if (tp.GetTileType() == TileTypes.myLayoutTrayTile && tp.GetValue() == value)
             {
                 return tile;
             }
@@ -68,313 +76,178 @@ public class BattleBoardController : MonoBehaviour
 
     void ClearAllOutlines()
     {
-        foreach(GameObject tile in tileButtonList)
+        foreach (GameObject tile in tileButtonList)
         {
-            tile.GetComponent<TileButton>().outlineImage.color = transparent;
+            tile.GetComponent<TileButton>().SetOutlineColor(transparent);
         }
     }
 
-    void SetPieceTile(GameObject pt, int count, int v, bool show = true)
+    TileButton InstantiateTileButton(Vector3 tv, int type)
     {
-        TilePiece pieceTile = pt.GetComponent<TilePiece>();
-        if (show)
-        {
-            string value = v.ToString();
-            if (v == 10)
-            {
-                value = "S";
-            }
-            else if (v == 11)
-            {
-                value = "B";
-            }
-            else if (v == 12)
-            {
-                value = "F";
-            }
-            pieceTile.countText.text = count.ToString();
-            pieceTile.valueText.text = value.ToString();
-        }
-        pieceTile.count = count;
-        pieceTile.value = v;
+        GameObject tile = Instantiate(tileButtonPrefab, buttonTileLayerTransform) as GameObject;
+        TileButton tb = tile.GetComponent<TileButton>();
+        tb.SetPosition(tv);
+        tb.SetType(type);
+        tileButtonList.Add(tile);
+        return tile.GetComponent<TileButton>();
     }
 
-    void SpawnTile(float x, float y, int type, Color color, bool piece, bool enabled = true)
+    TilePiece InstantiateTilePiece(Vector3 tv, int count, int value, Color color, int type)
     {
-        GameObject tile;
-        tileVector.x = x;
-        tileVector.y = y;
-
-        if (piece)
-        {
-            tile = Instantiate(tilePiecePrefab, pieceTileLayerTransform) as GameObject;
-            TilePiece tp = tile.GetComponent<TilePiece>();
-            tp.type = type;
-            tp.color = color;
-            tp.pieceImage.color = color;
-            tile.transform.localPosition = tileVector;
-            tilePieceList.Add(tile);
-        }
-        else
-        {
-            tile = Instantiate(tileButtonPrefab, buttonTileLayerTransform) as GameObject;
-            tile.GetComponent<TileButton>().type = type;
-            tile.transform.localPosition = tileVector;
-            tileButtonList.Add(tile);
-        }
+        GameObject tile = Instantiate(tilePiecePrefab, pieceTileLayerTransform) as GameObject;
+        TilePiece tp = tile.GetComponent<TilePiece>();
+        tp.SetPosition(tv);
+        tp.SetCount(count);
+        tp.SetValue(value);
+        tp.SetColor(color);
+        tp.SetType(type);
+        tilePieceList.Add(tile);
+        return tp;
     }
 
-    void LayoutSpawnMyFieldTiles(bool piece)
+    void LayoutInstantiateMyFieldTiles()
     {
-        float x = -462.7f;
-        float y = -153.2f;
-        int type = TileTypes.myLayoutFieldTile;
+        reusableVector.x = -462.7f;
+        reusableVector.y = -153.2f;
 
         for (int a = 0; a < 4; a++)
         {
             for (int b = 0; b < 10; b++)
             {
-                if (piece)
-                {
-                    SpawnTile(x, y, type, transparent, piece);
-                }
-                else
-                {
-                    SpawnTile(x, y, type, transparent, piece);
-                }
-                x = x + 102.9f;
+                InstantiateTileButton(reusableVector, TileTypes.myLayoutFieldTile);
+                reusableVector.x = reusableVector.x + 102.9f;
             }
-            x = -462.7f;
-            y = y - 102f;
+            reusableVector.x = -462.7f;
+            reusableVector.y = reusableVector.y - 102f;
         }
     }
 
-    void LayoutSpawnMyTrayTiles(bool piece, Color color)
+    void LayoutInstantiateMyTrayTiles(Color color)
     {
-        float x = -462.7f;
-        float y = -561.2f;
+        reusableVector.x = -462.7f;
+        reusableVector.y = -561.2f;
         int type = TileTypes.myLayoutTrayTile;
 
-        SpawnTile(x, y, type, color, piece);
-        x = 463.4f;
-        SpawnTile(x, y, type, color, piece);
-        x = -462.7f;
-        y = y - 102f;
+        int[] valueArray = { 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int[] countArray = { 6, 1, 1, 1, 2, 3, 4, 4, 4, 5, 8, 1 };
 
-        for (int a = 0; a < 10; a++)
+        InstantiateTileButton(reusableVector, type);
+        InstantiateTilePiece(reusableVector, countArray[0], valueArray[0], color, type);
+        reusableVector.x = 463.4f;
+        InstantiateTileButton(reusableVector, type);
+        InstantiateTilePiece(reusableVector, countArray[1], valueArray[1], color, type);
+        reusableVector.x = -462.7f;
+        reusableVector.y = reusableVector.y - 102f;
+
+        for (int a = 2; a < 12; a++)
         {
-            SpawnTile(x, y, type, color, piece);
-            x = x + 102.9f;
+            InstantiateTileButton(reusableVector, type);
+            InstantiateTilePiece(reusableVector, countArray[a], valueArray[a], color, type);
+            reusableVector.x = reusableVector.x + 102.9f;
         }
     }
 
-    void LayoutInitMyTrayTiles(Color color)
+    void LayoutAddRemoveTrayTile(int value, bool add)
     {
-        LayoutSpawnMyTrayTiles(false,color);
-        LayoutSpawnMyTrayTiles(true,color);
-        foreach (GameObject tile in tilePieceList)
+        GameObject goTrayTile = FindTrayTileByValue(value);
+
+        if (goTrayTile)
         {
-            //tile.AddComponent<TrayTile>();
-            //tile.GetComponent<PieceTile>().pieceImage.color = color;
-        }
-        GameObject[] tileArray = tilePieceList.ToArray();
+            //remove one tile from the tray
+            //find the tile to remove
+            TilePiece tpTrayTile = goTrayTile.GetComponent<TilePiece>();
 
-        SetPieceTile(tileArray[0], 6, 11);
-        SetPieceTile(tileArray[1], 1, 12);
-        SetPieceTile(tileArray[2], 1, 1);
-        SetPieceTile(tileArray[3], 1, 2);
-        SetPieceTile(tileArray[4], 2, 3);
-        SetPieceTile(tileArray[5], 3, 4);
-        SetPieceTile(tileArray[6], 4, 5);
-        SetPieceTile(tileArray[7], 4, 6);
-        SetPieceTile(tileArray[8], 4, 7);
-        SetPieceTile(tileArray[9], 5, 8);
-        SetPieceTile(tileArray[10], 8, 9);
-        SetPieceTile(tileArray[11], 1, 10);
-    }
-
-    void LayoutSpawnFieldtileFromTrayTile(TileButton tbClicked, TilePiece tpClicked)
-    {
-        //if the clicked field tile already has a piece on it
-        if(tpClicked)
-        {
-            //put the clicked tile back in the tray
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            /////////////////////////////////// Trouble here //////////////////////////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ///
-            GameObject trayTile = FindTrayTileByValue(tpSelected.value);
-            if (trayTile)
+            if (add)
             {
-                TilePiece tp = trayTile.GetComponent<TilePiece>();
-                tp.count++;
-                SetPieceTile(trayTile, tp.count, tp.value);
-                tp.pieceImage.color = tp.color;
-
-                SetPieceTile(tpClicked.gameObject, 0, tpSelected.value);
+                //add one to the tray tile's count
+                tpTrayTile.AddToCount();
             }
             else
             {
-                ClearAllOutlines();
-                tbSelected = null;
-                tpSelected = null;
+                //subtract one from the tray tile's count
+                tpTrayTile.TakeFromCount();
+            }
+        }
+    }
+
+    int LayoutAddRemoveFieldTile(TileButton tbTarget, Color color, int value)
+    {
+        int existingTileValue = 0;
+        GameObject goTarget = FindTilePiece(tbTarget.GetPosition().x, tbTarget.GetPosition().y);
+        if (goTarget)
+        {
+            TilePiece tpTarget = goTarget.GetComponent<TilePiece>();
+            //if value == 0, destroy the piece on this field tile
+            if (value == 0)
+            {
+                if (tpTarget)
+                {
+                    Destroy(tpTarget.gameObject);
+                }
+            }
+            else
+            {
+                //if there is a piece on this tile, assign it's value to the return variable existingTileValue and then
+                //make the target tile the value that was passed in
+                if (tpTarget)
+                {
+                    Debug.Log("tp target");
+                    existingTileValue = tpTarget.GetValue();
+                    tpTarget.SetValue(value);
+                }
+                //if there is no piece on this tile, spawn a new one
+                else
+                {
+                    Debug.Log("we should't be able to get here");
+                }
             }
         }
         else
         {
-            tileVector.x = tbClicked.myTransform.localPosition.x;
-            tileVector.y = tbClicked.myTransform.localPosition.y;
-            SpawnTile(tileVector.x, tileVector.y, TileTypes.myLayoutFieldTile, tpSelected.color, true);
-            GameObject[] tileArray = tilePieceList.ToArray();
-            SetPieceTile(tileArray[tileArray.Length - 1], 0, tpSelected.value);
-            tileArray[tileArray.Length - 1].GetComponent<TilePiece>().countText.text = "";
-            tpSelected.count--;
-            if (tpSelected.count < 1)
-            {
-                tpSelected.pieceImage.color = transparent;
-                tpSelected.countText.text = "";
-                tpSelected.valueText.text = "";
-                tpSelected.count = 0;
-            }
-            tpSelected.countText.text = tpSelected.count.ToString();
+            InstantiateTilePiece(tbTarget.GetPosition(), 0, value, color, TileTypes.myLayoutFieldTile);
+            //SpawnTile(tbTarget.myTransform.localPosition.x, tbTarget.myTransform.localPosition.y, TileTypes.myLayoutFieldTile, color, true);
+            //SetPieceTile()
         }
-    }
-
-    void LayoutSwapFieldtileForFieldTile(TileButton tbClicked, TilePiece tpClicked)
-    {
-        int tempValue;
-        if(tpSelected)
-        {
-            tempValue = tpSelected.value;
-            if(tpClicked)
-            {
-                SetPieceTile(tpSelected.gameObject, 0, tpClicked.value);
-                tpSelected.countText.text = "";
-
-                SetPieceTile(tpClicked.gameObject, 0, tempValue);
-                tpClicked.countText.text = "";
-            }
-            else
-            {
-                //if there is a piece on the selected tile and
-                //there isn't a piece on the clicked tile
-                //set the clicked tile to the selected tile vaule
-                tpSelected.myTransform.localPosition = tbClicked.myTransform.localPosition;
-            }
-            
-        }
-        else
-        {
-            //if there is no piece on the selected tile
-            if (tpClicked)
-            {
-                //and there is a piece on the clicked tile
-                tpClicked.myTransform.localPosition = tbSelected.myTransform.localPosition;
-            }
-            else
-            {
-                //and there is no piece on the clicked tile
-                ClearAllOutlines();
-            }
-        }
-    }
-
-    void LayoutPutFieldtileBackInTray()
-    {
-        GameObject trayTile = FindTrayTileByValue(tpSelected.value);
-        if(trayTile)
-        {
-            TilePiece tpClicked = trayTile.GetComponent<TilePiece>();
-            tpClicked.count++;
-            SetPieceTile(trayTile, tpClicked.count, tpClicked.value);
-            tpClicked.pieceImage.color = tpClicked.color;
-
-            if (tpSelected.gameObject)
-            {
-                tilePieceList.Remove(tpSelected.gameObject);
-                Destroy(tpSelected.gameObject);
-            }
-        }
-        else
-        {
-            ClearAllOutlines();
-            tbSelected = null;
-            tpSelected = null;
-        }
+        return existingTileValue;
     }
 
     void LayoutProcessTileClick(TileButton tbClicked, TilePiece tpClicked)
     {
         int typeSelected;
         int typeClicked;
-        if(tpSelected)
+        if (tpSelected)
         {
-            typeSelected = tpSelected.type;
+            typeSelected = tpSelected.GetTileType();
         }
         else
         {
-            typeSelected = tbSelected.type;
+            typeSelected = tbSelected.GetTileType();
         }
 
-        if(tpClicked)
+        if (tpClicked)
         {
-            typeClicked = tpClicked.type;
+            typeClicked = tpClicked.GetTileType();
         }
         else
         {
-            typeClicked = tbClicked.type;
+            typeClicked = tbClicked.GetTileType();
         }
 
-        switch(typeSelected)
+        switch (typeSelected)
         {
             case TileTypes.myLayoutTrayTile:
-                switch(typeClicked)
+                switch (typeClicked)
                 {
                     case TileTypes.myLayoutTrayTile:
                         ClearAllOutlines();
                         break;
                     case TileTypes.myLayoutFieldTile:
-                        LayoutSpawnFieldtileFromTrayTile(tbClicked, tpClicked);
+                        LayoutAddRemoveTrayTile(tpSelected.GetValue(), false);
+                        int fieldTileValue = LayoutAddRemoveFieldTile(tbClicked, tpSelected.GetColor(), tpSelected.GetValue());
+                        if (fieldTileValue > 0)
+                        {
+                            LayoutAddRemoveTrayTile(fieldTileValue, true);
+                        }
                         break;
                 }
                 break;
@@ -382,39 +255,61 @@ public class BattleBoardController : MonoBehaviour
                 switch (typeClicked)
                 {
                     case TileTypes.myLayoutTrayTile:
-                        LayoutPutFieldtileBackInTray();
+                        LayoutAddRemoveTrayTile(tpSelected.GetValue(), true);
+                        if (tpSelected)
+                        {
+                            tilePieceList.Remove(tpSelected.gameObject);
+                            Destroy(tpSelected.gameObject);
+                        }
                         break;
                     case TileTypes.myLayoutFieldTile:
-                        LayoutSwapFieldtileForFieldTile(tbClicked, tpClicked);
+                        int tempValue;
+                        if (tpSelected)
+                        {
+                            tempValue = tpSelected.GetValue();
+                            if (tpClicked)
+                            {
+                                tpSelected.SetValue(tpClicked.GetValue());
+                                tpClicked.SetValue(tempValue);
+                            }
+                            else
+                            {
+                                tpSelected.SetPosition(tbClicked.GetPosition());
+                            }
+                        }
+                        else if (tpClicked)
+                        {
+                            tempValue = tpClicked.GetValue();
+                            if (tpSelected)
+                            {
+                                tpClicked.SetValue(tpSelected.GetValue());
+                                tpSelected.SetValue(tempValue);
+                            }
+                            else
+                            {
+                                tpClicked.SetPosition(tbSelected.GetPosition());
+                            }
+                        }
+                        else
+                        {
+                            ResetSelected();
+                        }
+                        //LayoutSwapFieldtileForFieldTile(tbClicked, tpClicked);
                         break;
                 }
                 break;
         }
-        tbSelected = null;
-        tpSelected = null;
+        ResetSelected();
     }
-
-    void ProcessTileClick(TileButton tbClicked, TilePiece tpClicked)
-    {
-        if(isLayoutBoard)
-        {
-            LayoutProcessTileClick(tbClicked, tpClicked);
-        }
-        else
-        {
-
-        }
-    }
-
 
     public void TileClick(GameObject goClicked)
     {
         TileButton tbClicked = goClicked.GetComponent<TileButton>();
-        Vector3 vectorClicked = tbClicked.myTransform.localPosition;
-        GameObject goClickedPiece = FindTilePiece(vectorClicked.x, vectorClicked.y);        
+        Vector3 vectorClicked = tbClicked.GetPosition();
+        GameObject goClickedPiece = FindTilePiece(vectorClicked.x, vectorClicked.y);
 
         //if a tile has been selected
-        if(tbSelected)
+        if (tbSelected)
         {
             TilePiece tpClicked;
             if (goClickedPiece)
@@ -425,17 +320,24 @@ public class BattleBoardController : MonoBehaviour
             {
                 tpClicked = null;
             }
-            Vector3 tfSelected = tbSelected.myTransform.localPosition;
+            Vector3 tfSelected = tbSelected.GetPosition();
             GameObject goSelectedPiece = FindTilePiece(tfSelected.x, tfSelected.y);
-            
-            ProcessTileClick(tbClicked, tpClicked);
+
+            if (isLayoutBoard)
+            {
+                LayoutProcessTileClick(tbClicked, tpClicked);
+            }
+            else
+            {
+
+            }
             ClearAllOutlines();
         }
         //else assign clicked tile to selected tile
         else
         {
             tbSelected = tbClicked;
-            if(goClickedPiece)
+            if (goClickedPiece)
             {
                 tpSelected = goClickedPiece.GetComponent<TilePiece>();
             }
@@ -443,7 +345,7 @@ public class BattleBoardController : MonoBehaviour
             {
                 tpSelected = null;
             }
-            tbSelected.outlineImage.color = Color.green;
+            tbSelected.SetOutlineColor(Color.green);
         }
     }
 
@@ -461,152 +363,14 @@ public class BattleBoardController : MonoBehaviour
 
     private void Start()
     {
-        if(isLayoutBoard)
+        if (isLayoutBoard)
         {
-            LayoutInitMyTrayTiles(Color.red);
-            LayoutSpawnMyFieldTiles(false);
+            LayoutInstantiateMyTrayTiles(Color.red);
+            LayoutInstantiateMyFieldTiles();
         }
         else
         {
 
-        }        
-    }
-
-    /*void SpawnTileFromTrayToField(GameObject sourceTile, GameObject destinationTile)
-    {
-        tileVector = destinationTile.GetComponent<TilePiece>().myTransform.position;
-        GameObject tile = Instantiate(tilePiecePrefab, pieceTileLayerTransform) as GameObject;
-        tile.GetComponent<TilePiece>().type = TileTypes.myLayoutFieldTile;
-        tile.transform.localPosition = tileVector;
-        tilePieceList.Add(tile);
-
-        TilePiece tpSource = sourceTile.GetComponent<TilePiece>();
-        tpSource.count = tpSource.count - 1;
-        if(tpSource.count < 1)
-        {
-            if(sourceTile)
-            { }
         }
     }
-
-    void MyLayoutTrayPieceTileClick(GameObject clickedTile)
-    {
-        Vector3 tileVector = selectedTileButton.myTransform.position;;
-        Vector3 clickedPos;
-
-        if(selectedTilePiece)
-        {
-
-        }
-        
-        if(selectedTileButton)
-        {
-            ClearAllOutlines();
-            TilePiece tpClickedTilePiece = clickedTile.GetComponent<TilePiece>();
-            if (selectedTileButton.GetComponent<TilePiece>())
-            {
-                TilePiece tpSelectedTilePiece = selectedTileButton.GetComponent<TilePiece>();
-            }
-            else
-            {
-                TileButton tbSelectedTileButton = selectedTileButton.GetComponent<TileButton>();
-            }
-            
-        }
-        else
-        {
-            clickedPos = clickedTile.GetComponent<TilePiece>().myTransform.position;
-            selectedTileButton = FindTileButton(clickedPos.x, clickedPos.y).GetComponent<TileButton>();
-        }
-        selectedTileButton = null;
-        selectedTilePiece = null;
-    }*/
-
-    /*List<GameObject> SpawnOpponentTrayTiles()
-    {
-        float x = -462.7f;
-        float y = 662.8f;
-        
-        List<GameObject> tileList = new List<GameObject>();
-
-        for(int a = 0; a < 10; a++)
-        {
-            tileList.Add(SpawnTile(x,y,true));
-            x = x + 102.9f;
-        }
-        x = -462.7f;
-        y = y - 102f;
-        tileList.Add(SpawnTile(x,y,true));
-        x = 463.4f;
-        tileList.Add(SpawnTile(x,y,true));
-        //y = y - 102f;
-
-        return tileList;
-    }
-
-    List<GameObject> SpawnOpponentFieldTiles(bool piece)
-    {
-        float x = -462.7f;
-        float y = 458.8f;
-        Vector3 tileVector = new Vector3(0, 0, 0);
-        List<GameObject> tileList = new List<GameObject>();
-
-        for (int a = 0; a < 4; a++)
-        {
-            for (int b = 0; b < 10; b++)
-            {
-                if (piece)
-                {
-                    tileList.Add(SpawnTile(x, y,true));
-                }
-                else
-                {
-                    tileList.Add(SpawnTile(x, y,false));
-                }                
-                x = x + 102.9f;
-            }
-            x = -462.7f;
-            y = y - 102f;
-        }
-        return tileList;
-    }
-
-    List<GameObject> SpawnNeutralTiles()
-    {
-        float x = -462.7f;
-        float y = 50.8f;
-
-        List<GameObject> tileList = new List<GameObject>();
-
-        for (int a = 0; a < 2; a++)
-        {
-            for (int b = 0; b < 2; b++)
-            {
-                tileList.Add(SpawnTile(x,y,false));
-                x = x + 102.9f;
-            }
-            for (int b = 0; b < 2; b++)
-            {
-                x = x + 102.9f;
-            }
-            for (int b = 0; b < 2; b++)
-            {
-                tileList.Add(SpawnTile(x,y,false));
-                x = x + 102.9f;
-            }
-            for (int b = 0; b < 2; b++)
-            {
-                x = x + 102.9f;
-            }
-            for (int b = 0; b < 2; b++)
-            {
-                tileList.Add(SpawnTile(x,y,false));
-                x = x + 102.9f;
-            }
-            y = y - 102f;
-            x = -462.7f;
-        }
-
-        return tileList;
-    }*/
 }
