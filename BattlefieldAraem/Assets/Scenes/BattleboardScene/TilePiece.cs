@@ -1,157 +1,46 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class TilePiece : MonoBehaviour
+public class TilePiece : TileButton
 {
     [SerializeField] Image pieceImage;
-    [SerializeField] TextMeshProUGUI countText;
-    [SerializeField] TextMeshProUGUI valueText;
-    Transform myTransform;
-    Color color;
-    Color disabledColor;
+    [SerializeField] TextMeshProUGUI attackText;
+    [SerializeField] TextMeshProUGUI defenseText;
+    [SerializeField] TextMeshProUGUI moveText;
+    [SerializeField] TextMeshProUGUI rangeText;
+    [SerializeField] TextMeshProUGUI specialText;
 
-    int value;
-    int count;
-    int type;
-
-    public void AddToCount()
+    public void SetTilePieceImage(Image img)
     {
-        count++;
-        countText.text = count.ToString();
-        pieceImage.color = color;
+        pieceImage.sprite = img.sprite;
     }
 
-    public void TakeFromCount()
+    public void SetTileAttackText(int value)
     {
-        count--;
-        if(count > 0)
-        {
-            countText.text = count.ToString();
-            pieceImage.color = color;
-        }
-        else
-        {
-            countText.text = "";
-            pieceImage.color = disabledColor;
-        }
+        attackText.text = value.ToString();
     }
 
-    public void SetCount(int v)
+    public void SetTileDefenseText(int value)
     {
-        count = v;
-        if(v > 0)
-        {
-            countText.text = v.ToString();
-            pieceImage.color = color;
-        }
-        else
-        {
-            countText.text = "";
-            pieceImage.color = disabledColor;
-        }
+        defenseText.text = value.ToString();
     }
 
-    public int GetCount()
+    public void SetTileMoveText(int value)
     {
-        return count;
+        moveText.text = value.ToString();
     }
 
-    public void SetValue(int v)
+    public void SetTileRangeText(int value)
     {
-        if(v == 0)
-        {
-            if(gameObject)
-            {
-                Destroy(gameObject);
-                return;
-            }
-        }
-        value = v;
-        string tv;
-        if(v > 0)
-        {
-            if (v == 10)
-            {
-                tv = "S";
-            }
-            else if (v == 11)
-            {
-                tv = "B";
-            }
-            else if (v == 12)
-            {
-                tv = "F";
-            }
-            else
-            {
-                tv = v.ToString();
-            }
-            valueText.text = tv;
-        }
-        else
-        {
-            valueText.text = "";
-        }
-        
+        rangeText.text = value.ToString();
     }
 
-    public int GetValue()
+    public void SetTileSpecialText(string txt)
     {
-        return value;
+        specialText.text = txt;
     }
 
-    public void SetType(int v)
-    {
-        type = v;
-    }
-
-    public int GetTileType()
-    {
-        return type;
-    }
-
-    public void SetColor(Color c)
-    {
-        color = c;
-        disabledColor = new Color(c.r, c.g, c.b, 0.5f);
-        pieceImage.color = color;
-    }
-
-    public Color GetColor()
-    {
-        return color;
-    }
-
-    public void SetPosition(float x, float y)
-    {
-        BattleBoardController.Instance.reusableVector.x = x;
-        BattleBoardController.Instance.reusableVector.y = y;
-        myTransform.localPosition = BattleBoardController.Instance.reusableVector;
-    }
-
-    public void SetPosition(Vector3 v)
-    {
-        myTransform.localPosition = v;
-    }
-
-    public Vector3 GetPosition()
-    {
-        return myTransform.localPosition;
-    }
-
-    public void EnableTile()
-    {
-        pieceImage.color = color;
-    }
-
-    public void DisableTile()
-    {
-        pieceImage.color = disabledColor;
-    }
-
-    private void Awake()
-    {
-        myTransform = transform;
-    }
 }

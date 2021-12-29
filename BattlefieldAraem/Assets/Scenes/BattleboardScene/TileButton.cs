@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,80 +8,83 @@ public class TileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] Image outlineImage;
     [SerializeField] Image fillImage;
+    [SerializeField] bool isEnabled;
+    Color transparent = new Color(0, 0, 0, 0);
+    Vector3 reusableVector = new Vector3(0, 0, 0);
 
-    int type;
-    bool isEnabled = true;
+    int tileType;
+    int tileID;
     Transform myTransform;
 
     //public int type;
 
     bool pointerDown;
     float pointerDownTimer;
-    float requiredHoldTime = 0.2f;
+    float requiredHoldTime = 0.4f;
 
-    public void SetType(int v)
+    public void SetTileID(int id)
     {
-        type = v;
+        tileID = id;
     }
 
-    public int GetTileType()
+    public int GetTileId()
     {
-        return type;
+        return tileID;
     }
 
-    public void SetPosition(float x, float y)
-    {
-        BattleBoardController.Instance.reusableVector.x = x;
-        BattleBoardController.Instance.reusableVector.y = y;
-        myTransform.localPosition = BattleBoardController.Instance.reusableVector;
-    }
-
-    public void SetPosition(Vector3 v)
-    {
-        myTransform.localPosition = v;
-    }
-
-    public Vector3 GetPosition()
-    {
-        return myTransform.localPosition;
-    }
-
-    public void SetOutlineColor(Color c)
-    {
-        outlineImage.color = c;
-    }
-
-    void Reset()
+    public void ResetTile()
     {
         pointerDown = false;
         pointerDownTimer = 0;
         fillImage.fillAmount = 0;
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
-        GameObject goPointerDown = BattleBoardController.Instance.FindTilePiece(myTransform.localPosition.x, myTransform.localPosition.y);
-        if(goPointerDown)
-        {
-            TilePiece tpPointerDown = goPointerDown.GetComponent<TilePiece>();
-            if(tpPointerDown.GetTileType() == TileTypes.myLayoutTrayTile && tpPointerDown.GetCount() < 1)
-            {
-                pointerDown = false;
-                return;
-            }
-        }
-        if (isEnabled)
+        if(isEnabled)
         {
             pointerDown = true;
-        }
+        }        
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(pointerDown)
+        if (pointerDown)
         {
-            Reset();
-        }        
+            ResetTile();
+        }
+    }
+
+    public void SetTileType(int v)
+    {
+        tileType = v;
+    }
+
+    public int GetTileType()
+    {
+        return tileType;
+    }
+
+    public void SetTilePosition(float x, float y)
+    {
+        reusableVector.x = x;
+        reusableVector.y = y;
+        myTransform.localPosition = reusableVector;
+    }
+
+    public void SetTilePosition(Vector3 v)
+    {
+        myTransform.localPosition = v;
+    }
+
+    public Vector3 GetTilePosition()
+    {
+        return myTransform.localPosition;
+    }
+
+    public void SetTileOutlineColor(Color c)
+    {
+        outlineImage.color = c;
     }
 
     private void Update()
@@ -89,8 +94,8 @@ public class TileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             pointerDownTimer += Time.deltaTime;
             if (pointerDownTimer >= requiredHoldTime)
             {
-                BattleBoardController.Instance.TileClick(gameObject);
-                Reset();
+                //LayoutBoardController.Instance.TileClick(gameObject);
+                ResetTile();
             }
 
             fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
@@ -100,6 +105,6 @@ public class TileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Awake()
     {
         myTransform = transform;
-        outlineImage.color = BattleBoardController.Instance.transparent;
+        outlineImage.color = transparent;
     }
 }
