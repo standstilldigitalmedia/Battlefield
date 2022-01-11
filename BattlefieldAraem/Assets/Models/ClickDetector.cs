@@ -18,24 +18,15 @@ public class ClickDetector : MonoBehaviour
                     {
                         Debug.Log("Hit Character");
                     }
-                    else
-                    {
-                        Debug.Log("has parent");
-                    }
-                }
-                else
-                {
-                    if(hit.transform.name == "FieldTile")
+                    else if (hit.transform.name == "ClickableTile")
                     {
                         Debug.Log("Field Tile");
                     }
                     else
                     {
-                        Debug.Log("no parent");
+                        Debug.Log(hit.transform.name);
                     }
-                    
-                }
-                
+                } 
             }
         }
     }
